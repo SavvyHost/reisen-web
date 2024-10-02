@@ -22,7 +22,7 @@
 //     {
 //       color: "primary",
 //       disabled: true,
-//       className: "text-mainBlue border-mainGreen border-2",
+//       className: "text-mainBlue border-mainred border-2",
 //     },
 //     {
 //       color: "danger",
@@ -32,7 +32,7 @@
 //     {
 //       color: "primary",
 //       bordered: true,
-//       className: "text-mainGreen border-mainGreen bg-white",
+//       className: "text-mainred border-mainred bg-white",
 //     },
 //     {
 //       color: "danger",
@@ -42,7 +42,7 @@
 //     {
 //       color: "dark",
 //       disabled: true,
-//       className: "text-mainGreen border-mainGreen border-2 bg-white",
+//       className: "text-mainred border-mainred border-2 bg-white",
 //     },
 //   ],
 //   defaultVariants: {

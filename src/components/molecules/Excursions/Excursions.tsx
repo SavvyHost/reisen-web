@@ -19,7 +19,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
             <div key={excursion.id} className="px-[5px] md:px-[5px] mb-3">
               <Link href={`/top-packages/${excursion.id}`}>
                 <div className="px-[4px] mb-3">
-                  <div className="flex flex-col max-w-lg mx-auto cursor-pointer border hover:border-green-600 border-gray-200 rounded-lg overflow-hidden shadow-lg bg-white h-[500px] transition-all duration-300 ease-in-out">
+                  <div className="flex flex-col max-w-lg mx-auto cursor-pointer border hover:border-red-600 border-gray-200 rounded-lg overflow-hidden shadow-lg bg-white h-[500px] transition-all duration-300 ease-in-out">
                     <div className="relative h-72 overflow-hidden">
                       <Image
                         className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
@@ -56,7 +56,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                               (_, index) => (
                                 <BsFillCircleFill
                                   key={index}
-                                  className="text-green-500 w-4 h-4 ml-1"
+                                  className="text-red-500 w-4 h-4 ml-1"
                                 />
                               )
                             )}
@@ -72,7 +72,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         </span>
                       </div>
                       <div className="mt-1">
-                        <span className="font-segoe text-xl text-green-700">
+                        <span className="font-segoe text-xl text-red-700">
                           From $
                           {excursion.tour_prices[0]?.prices[0]?.price || "N/A"}
                         </span>

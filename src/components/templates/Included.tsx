@@ -26,7 +26,7 @@ const Included: React.FC<IncludedProps> = ({ DetailTour }) => {
       <div className="flex flex-col md:flex-row lg:gap-16 gap-3 mt-4">
         {/* Column for Included Items (with MdDone icon) */}
         <div className="w-full md:w-1/2">
-          <h3 className="font-segoe text-green-700 text-2xl mb-4">Included</h3>
+          <h3 className="font-segoe text-red-700 text-2xl mb-4">Included</h3>
           {includedItems?.map((item: TourIncludeItem, index: number) => (
             <div key={index} className="flex items-center p-0">
               <div>
@@ -34,7 +34,7 @@ const Included: React.FC<IncludedProps> = ({ DetailTour }) => {
                   {item.title}
                 </span> */}
                 <div className="flex ">
-                  <div className="text-green-700 mr-2 mt-1">
+                  <div className="text-red-700 mr-2 mt-1">
                     <MdDone className="" size={20} />
                   </div>
                   <div className="text-gray-700 font-segoe text-[16px]">

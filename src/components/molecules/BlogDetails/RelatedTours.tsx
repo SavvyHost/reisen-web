@@ -55,12 +55,12 @@ const RelatedTours = () => {
                       {[1, 2, 3, 4].map((_, index) => (
                         <BsFillCircleFill
                           key={index}
-                          className="text-green-500 w-4 h-4 ml-1"
+                          className="text-red-500 w-4 h-4 ml-1"
                         />
                       ))}
                       {excursion.rating % 1 !== 0 && (
                         <div className="w-4 h-4 ml-1 relative">
-                          <div className="absolute top-0 left-0 w-full h-full bg-green-500 rounded-full clip-half"></div>
+                          <div className="absolute top-0 left-0 w-full h-full bg-red-500 rounded-full clip-half"></div>
                         </div>
                       )}
                       <span className="m-2 text-gray-600 text-sm">
@@ -123,12 +123,12 @@ const RelatedTours = () => {
                         {[1, 2, 3, 4].map((_, index) => (
                           <BsFillCircleFill
                             key={index}
-                            className="text-green-500 w-4 h-4 ml-1"
+                            className="text-red-500 w-4 h-4 ml-1"
                           />
                         ))}
                         {excursion.rating % 1 !== 0 && (
                           <div className="w-4 h-4 ml-1 relative">
-                            <div className="absolute top-0 left-0 w-full h-full bg-green-500 rounded-full clip-half"></div>
+                            <div className="absolute top-0 left-0 w-full h-full bg-red-500 rounded-full clip-half"></div>
                           </div>
                         )}
                         <span className="m-2 text-gray-600 text-sm">
