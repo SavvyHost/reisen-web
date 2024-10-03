@@ -2,7 +2,13 @@ import { TourPackage } from "@/types/tour";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { BsClock, BsFillCircleFill, BsHeart, BsMap } from "react-icons/bs";
+import {
+  BsClock,
+  BsFillCircleFill,
+  BsHeart,
+  BsLuggage,
+  BsMap,
+} from "react-icons/bs";
 
 interface ExcursionsProps {
   toursData: TourPackage[];
@@ -17,9 +23,9 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
         {dataToDisplay?.length ? (
           dataToDisplay.map((excursion: TourPackage) => (
             <div key={excursion.id} className="px-[5px] md:px-[5px] mb-3">
-              <Link href={`/top-packages/${excursion.id}`}>
+              <Link href={`/top-excursions/${excursion.id}`}>
                 <div className="px-[4px] mb-3">
-                  <div className="flex flex-col max-w-lg mx-auto cursor-pointer border hover:border-red-600 border-gray-200 rounded-lg overflow-hidden shadow-lg bg-white h-[500px] transition-all duration-300 ease-in-out">
+                  <div className="flex flex-col max-w-lg mx-auto cursor-pointer hover:shadow-xl  rounded-2xl overflow-hidden  h-[450px] transition-all duration-300 ease-in-out">
                     <div className="relative h-72 overflow-hidden">
                       <Image
                         className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
@@ -28,7 +34,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         width={100}
                         height={100}
                       />
-                      <div className="absolute top-2 left-2 bg-black text-white text-xs font-segoe font-medium px-2 py-1 rounded">
+                      <div className="absolute top-2 left-2 bg-green-800 text-white text-xs font-segoe font-medium px-2 py-1 rounded">
                         Top Rated
                       </div>
                       <Button className="absolute top-2 right-2 text-white hover:text-red-500">
@@ -47,32 +53,20 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                       </h2>
                       <div className="flex items-center text-gray-600 text-sm mb-4">
                         <BsClock size={16} className="mr-1" />
-                        <span>{excursion.duration} days</span>
+                        <span>{excursion.duration} Hours</span>
                       </div>
-                      <div className="flex items-center mb-4">
-                        {/* <div className="flex-1">
-                          <div className="flex items-center">
-                            {[...Array(excursion.starRating)].map(
-                              (_, index) => (
-                                <BsFillCircleFill
-                                  key={index}
-                                  className="text-red-500 w-4 h-4 ml-1"
-                                />
-                              )
-                            )}
-                            <span className="m-2 text-gray-600 text-sm">
-                              {excursion.starRating} stars
-                            </span>
-                          </div>
-                        </div> */}
+                      <div className="flex items-center text-gray-600 text-sm mb-4">
+                        <BsLuggage size={16} className="mr-3" />
+                        <span>Age Range : {excursion.age_range} </span>
                       </div>
+
                       <div className="text-sm">
                         <span className="line-through text-gray-500">
                           From ${excursion.min_price}
                         </span>
                       </div>
                       <div className="mt-1">
-                        <span className="font-segoe text-xl text-red-700">
+                        <span className="font-segoe text-xl text-green-700">
                           From $
                           {excursion.tour_prices[0]?.prices[0]?.price || "N/A"}
                         </span>

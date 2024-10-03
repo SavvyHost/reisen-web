@@ -44,7 +44,7 @@ const ExcursionsTab: React.FC<ExcursionsTabProps> = ({ toursData }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 mt-8 px-6">
+    <div className="flex flex-col md:flex-row gap-8 mt-8 ">
       {isLargeScreen ? (
         <div className="w-full md:w-1/4">
           <LargeScreenSidebar
@@ -66,7 +66,7 @@ const ExcursionsTab: React.FC<ExcursionsTabProps> = ({ toursData }) => {
         <div className="fixed top-12 z-30 left-0 bg-white pb-6 pt-8 px-6 md:hidden flex justify-center ">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-red-800 p-3 text-white mr-4 rounded-lg  w-full max-w-[130px]"
+            className="bg-green-800 p-3 text-white mr-4 rounded-lg  w-full max-w-[130px]"
           >
             Show Filters
           </button>
@@ -75,7 +75,7 @@ const ExcursionsTab: React.FC<ExcursionsTabProps> = ({ toursData }) => {
         </div>
       )}
 
-      <div className="w-full md:w-3/4 mb-5 lg:mt-0 mt-16 lg:mb-4">
+      <div className="w-full md:w-3/4 mb-5 lg:mt-0 mt-16 lg:mb-4 px-2">
         <TravelPackagePage toursData={toursData} />
       </div>
 

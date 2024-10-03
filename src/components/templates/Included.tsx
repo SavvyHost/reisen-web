@@ -1,79 +1,49 @@
-import React from "react";
-import { MdDone } from "react-icons/md";
-import { VscError } from "react-icons/vsc";
-import { TourDetail, TourIncludeItem } from "@/types/tour";
+import { FC } from "react";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
-interface IncludedProps {
-  DetailTour: TourDetail;
+interface TourInclude {
+  id: number;
+  description: string;
+  status: string;
 }
 
-const Included: React.FC<IncludedProps> = ({ DetailTour }) => {
-  // Separate included and not-included items into two arrays
-  const includedItems = DetailTour.tour_includes?.filter(
-    (item: TourIncludeItem) => item.status === "yes"
-  );
-  const notIncludedItems = DetailTour.tour_includes?.filter(
-    (item: TourIncludeItem) => item.status !== "yes"
-  );
+interface OriginalExperienceProps {
+  DetailTour: {
+    tour_includes?: TourInclude[]; // Made optional
+  };
+}
+
+const OriginalExperience: FC<OriginalExperienceProps> = ({ DetailTour }) => {
+  // Check if tour_includes is undefined
+  if (!DetailTour || !DetailTour.tour_includes) {
+    return null; // or return an alternative message if you prefer
+  }
 
   return (
-    <div>
-      <h2 className="text-3xl font-segoe text-start mt-2 lg:mt-7">
-        What’s Included
-      </h2>
+    <div className="w-full mx-auto mb-3 mt-2 px-4 py-2 border bg-white border-green-200 rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-4">Includes</h2>
 
-      {/* Flex container for two columns */}
-      <div className="flex flex-col md:flex-row lg:gap-16 gap-3 mt-4">
-        {/* Column for Included Items (with MdDone icon) */}
-        <div className="w-full md:w-1/2">
-          <h3 className="font-segoe text-red-700 text-2xl mb-4">Included</h3>
-          {includedItems?.map((item: TourIncludeItem, index: number) => (
-            <div key={index} className="flex items-center p-0">
+      {/* Includes Section */}
+      <section className="mb-6">
+        <ul className="ml-2 lg:ml-6 mt-2">
+          {DetailTour.tour_includes.map((item) => (
+            <li key={item.id} className="flex items-center text-gray-600">
               <div>
-                {/* <span className="font-segoe text-[#A16207] text-xl">
-                  {item.title}
-                </span> */}
-                <div className="flex ">
-                  <div className="text-red-700 mr-2 mt-1">
-                    <MdDone className="" size={20} />
-                  </div>
-                  <div className="text-gray-700 font-segoe text-[16px]">
-                    {" "}
-                    {item.description}
-                  </div>
-                </div>
+                {item.status === "yes" ? (
+                  <FaCheckCircle className="text-green-600 mr-2" />
+                ) : (
+                  <FaTimesCircle className="text-red-600 mr-2" />
+                )}
               </div>
-            </div>
+              {item.description}
+            </li>
           ))}
-        </div>
+        </ul>
+      </section>
 
-        {/* Column for Not Included Items (with VscError icon) */}
-        <div className="w-full md:w-1/2">
-          <h3 className="font-segoe text-red-500 text-2xl mb-4">
-            Not Included
-          </h3>
-          {notIncludedItems?.map((item: TourIncludeItem, index: number) => (
-            <div key={index} className="flex items-center">
-              <div>
-                {/* <span className="font-segoe text-[#A16207] text-xl">
-                  {item.title}
-                </span> */}
-                <div className="flex ">
-                  <div className="text-red-500 mr-2 mt-[2px]">
-                    <VscError className="" size={20} />
-                  </div>
-
-                  <div className="text-gray-700 flex font-segoe text-[16px]">
-                    {item.description}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Other sections remain unchanged */}
     </div>
   );
 };
 
-export default Included;
+export default OriginalExperience;

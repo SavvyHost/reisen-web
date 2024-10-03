@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Slider from "react-slick";
-import ImageCard from "../../../../public/assets/Secondimage.jpeg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { sampleAttractions } from "@/data";
-
-type Attraction = {
-  id: number;
+import { Attraction } from "@/types/attraction";
+import defaultImage from "../../../../public/assets/Secondimage.jpeg";
+type AttractionCardProps = {
   name: string;
-  imageSrc: StaticImageData;
+  imageSrc: string; // Updated to string for dynamic image URLs
   toursCount: number;
 };
 
-const AttractionCard: React.FC<Attraction> = ({
+const AttractionCard: React.FC<AttractionCardProps> = ({
   name,
   imageSrc,
   toursCount,
 }) => {
   return (
-    <div className="flex items-center cursor-pointer rounded-lg overflow-hidden md:w-80 w-72 md:mx-0 ml-28 h-24 transition-transform duration-300 ease-in-out hover:border border-gray-200 hover:bg-white">
+    <div className="flex items-center cursor-pointer rounded-lg overflow-hidden md:w-80 w-64 md:mx-0  h-24 transition-transform duration-300 ease-in-out hover:border border-gray-200 hover:bg-white">
       <div className="w-24 h-24 relative flex-shrink-0 overflow-hidden">
         <Image
-          src={imageSrc}
+          src={imageSrc || defaultImage}
           alt={name}
           layout="fill"
           objectFit="cover"
@@ -41,7 +39,11 @@ const AttractionCard: React.FC<Attraction> = ({
   );
 };
 
-const Attractions: React.FC = () => {
+type Props = {
+  attractions: Attraction[]; // Accept dynamic data for attractions
+};
+
+const Attractions: React.FC<Props> = ({ attractions }) => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -59,7 +61,7 @@ const Attractions: React.FC = () => {
 
   const sliderSettings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -80,21 +82,27 @@ const Attractions: React.FC = () => {
 
   return (
     <div className="slider-container w-full overflow-hidden p-0">
-      {" "}
-      {/* Adjust container width and overflow */}
       {isMobile ? (
         <Slider {...sliderSettings}>
-          {sampleAttractions.map((attraction) => (
+          {attractions.map((attraction) => (
             <div className="flex justify-center" key={attraction.id}>
-              <AttractionCard {...attraction} />
+              <AttractionCard
+                name={attraction.name}
+                imageSrc={attraction.paner_image?.url || defaultImage} // Use the dynamic image
+                toursCount={attraction.toursCount || 0} // Assuming the API has toursCount or related field
+              />
             </div>
           ))}
         </Slider>
       ) : (
         <div className="grid grid-cols-3 gap-4 mb-3">
-          {sampleAttractions.map((attraction) => (
-            <div className="flex justify-center" key={attraction.id}>
-              <AttractionCard {...attraction} />
+          {attractions.map((attraction) => (
+            <div className="flex justify-start" key={attraction.id}>
+              <AttractionCard
+                name={attraction.name}
+                imageSrc={attraction.paner_image?.url || defaultImage}
+                toursCount={attraction.toursCount || 0}
+              />
             </div>
           ))}
         </div>

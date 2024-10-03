@@ -30,17 +30,17 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
       <div className="grid grid-cols-1 gap-6 mt-3 lg:mt-0">
         {currentTours.map((pkg) => (
           <Link href={`/top-packages/${pkg.id}`} key={pkg.id}>
-            <div className="w-full bg-white rounded-md border-gray-300 border overflow-hidden  transition-shadow duration-300 hover:shadow-xl cursor-pointer">
+            <div className="w-full hover:border-green-500 bg-white rounded-md border-gray-300 border overflow-hidden  transition-shadow duration-300 hover:shadow-xl cursor-pointer">
               <div className="flex flex-col md:flex-row">
                 <div className="w-full md:w-2/6 p-3 h-64 md:h-auto relative">
                   <Image
-                    src={pkg.main_image.url || defaultImage} // Use default image if main_image is not available
+                    src={pkg?.main_image?.url || defaultImage} // Check if main_image and its url exist, otherwise use the default image
                     alt={pkg.title}
                     width={100}
                     height={100}
-                    className="rounded-md  w-full h-full"
+                    className="rounded-md w-full h-full"
                   />
-                  <div className="absolute top-5 left-5 bg-red-500 text-white px-3 py-1 text-sm font-segoe rounded-sm shadow-md">
+                  <div className="absolute top-5 left-5 bg-green-500 text-white px-3 py-1 text-sm font-segoe rounded-sm shadow-md">
                     Special Offer 20%
                   </div>
                   <button className="absolute top-5 right-5 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors duration-200 group">
@@ -60,7 +60,9 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                       <div className="flex items-center space-x-2">
                         <MapPin className="w-5 h-5 text-gray-500" />
                         <div>
-                          <p className="text-sm text-gray-600">Destination</p>
+                          <p className="text-sm text-gray-600">
+                            Destination :{" "}
+                          </p>
                           <p className="font-segoe text-gray-800">
                             {pkg.destination}
                           </p>
@@ -69,7 +71,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                       <div className="flex items-center space-x-2">
                         <Calendar className="w-5 h-5 text-gray-500" />
                         <div>
-                          <p className="text-sm text-gray-600">Duration</p>
+                          <p className="text-sm text-gray-600">Duration : </p>
                           <p className="font-segoe text-gray-800">
                             {pkg.duration} Days
                           </p>
@@ -78,7 +80,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                       <div className="flex items-center space-x-2">
                         <Users className="w-5 h-5 text-gray-500" />
                         <div>
-                          <p className="text-sm text-gray-600">Age range</p>
+                          <p className="text-sm text-gray-600">Age range : </p>
                           <p className="font-segoe text-gray-800">
                             {pkg.age_range}
                           </p>
@@ -87,10 +89,8 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                       <div className="flex items-center space-x-2">
                         <Globe className="w-5 h-5 text-gray-500" />
                         <div>
-                          <p className="text-sm text-gray-600">Operated in</p>
-                          <p className="font-segoe text-gray-800">
-                            {pkg.language}
-                          </p>
+                          <p className="text-sm text-gray-600">Run : </p>
+                          <p className="font-segoe text-gray-800">{pkg.run}</p>
                         </div>
                       </div>
                     </div>
@@ -108,12 +108,12 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                         View tour
                       </Button>
 
-                      <Button className="border bg-red-300 md:mx-0  px-5 md:px-2 text-nowrap border-red-600 text-red-900 hover:bg-red-50 font-segoe sm:py-2 sm:px-6 rounded-sm transition duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto">
+                      <Button className="border bg-green-300 md:mx-0  px-5 md:px-2 text-nowrap border-green-600 text-green-900 hover:bg-green-50 font-segoe sm:py-2 sm:px-6 rounded-sm transition duration-300 ease-in-out transform hover:scale-105 w-full sm:w-auto">
                         Whats App{" "}
                         <div>
                           <span>
                             <FaWhatsapp
-                              className="text-red-900 ml-3"
+                              className="text-green-900 ml-3"
                               size={20}
                             />
                           </span>

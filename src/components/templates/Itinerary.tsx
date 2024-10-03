@@ -1,60 +1,83 @@
-import React from "react";
-import Image from "next/image";
-import Map from "../../../public/assets/map.jpeg";
-import { FaDownload } from "react-icons/fa";
-import { Button } from "@mui/material";
-import { TourDetail, TourItineraryItem } from "@/types/tour"; // Correct import
+import React, { useState } from "react";
+import { Heart, ChevronDown, ChevronUp } from "lucide-react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-interface TourItineraryProps {
-  DetailTour: TourDetail;
-}
+const TourCard = ({ itinerary, index, isLast }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const TourItinerary: React.FC<TourItineraryProps> = ({ DetailTour }) => {
+  const toggleCollapse = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="">
-      <h2 className="text-3xl font-segoe text-start mt-9 mb-6">Itinerary</h2>
+    <div className="w-full overflow-hidden my-1 relative">
+      {/* Vertical line and dot */}
+      <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-300">
+        <div className="absolute left-1/2 top-6 w-4 h-4 rounded-full bg-green-500 transform -translate-x-1/2 -translate-y-1/2" />
+      </div>
 
-      <div className="flex flex-col md:flex-row max-w-6xl mx-auto overflow-hidden">
-        {/* Left side - Map */}
-        <div className="relative w-full md:w-1/2 h-80 md:h-auto">
-          <Image
-            src={Map}
-            alt="Tour Map"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-md"
-          />
-        </div>
+      {/* Content moved to the right */}
+      <div className="lg:ml-10 ml-5">
+        <div className="px-6 py-4">
+          <div
+            className="flex justify-between items-center font-semibold text-base lg:text-xl mb-2 cursor-pointer"
+            onClick={toggleCollapse}
+          >
+            <span>
+              Day {index + 1}: {itinerary.title}
+            </span>
+            {isOpen ? (
+              <div>
+                <FaChevronUp />
+              </div>
+            ) : (
+              <div>
+                <FaChevronDown />
+              </div>
+            )}
+          </div>
 
-        {/* Right side - Scrollable Itinerary with Stepper */}
-        <div className="w-full md:w-1/2 p-6 overflow-y-auto max-h-[600px] relative">
-          <div className="absolute left-8 top-8 bottom-8 w-[2px] bg-[#A16207]"></div>
-          {DetailTour?.tour_itineraries?.map(
-            (item: TourItineraryItem, index: number) => (
-              <div key={index} className="mb-10 relative pl-12">
-                <div className="absolute left-0 -ml-[5px] mt-1.5 w-7 h-7 bg-[#A16207] rounded-full flex items-center justify-center text-white text-sm">
-                  {index + 1}
-                </div>
-                <h3 className="text-lg font-segoe text-[#A16207] flex items-center">
-                  Day {index + 1} : {item.title}
-                </h3>
-                <p className="mt-2 font-segoe text-gray-700">
-                  {item.description}
-                </p>
-                <p className="mt-1 font-segoe text-sm text-gray-500">
-                  {item.duration}
+          <div
+            className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+              isOpen ? "max-h-96" : "max-h-0"
+            }`}
+          >
+            <div
+              className={`px-2 ${
+                isOpen ? "opacity-100" : "opacity-0"
+              } transition-opacity duration-300`}
+            >
+              <div className="text-gray-700 text-base mb-2">
+                <p>{itinerary.description}</p>
+                <p className="text-gray-600 text-sm">
+                  {itinerary.city.name} - {itinerary.place.name}
                 </p>
               </div>
-            )
-          )}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Button with Icon */}
-      <Button className="mt-6 flex text-red-900 bg capitalize items-center px-4 py-2 border border-opacity-60 border-red-700 bg-red-100  font-segoe text-lg rounded-md hover:bg-[#1b5e2e] hover:text-white transition-colors duration-300">
-        <FaDownload className="mr-2 text-[#53d869]" />
-        Download Brochure
-      </Button>
+      {/* Extend the line to the next item */}
+      {!isLast && (
+        <div className="absolute left-3 top-14 bottom-0 w-0.5 bg-gray-300" />
+      )}
+    </div>
+  );
+};
+
+const TourItinerary = ({ DetailTour }) => {
+  return (
+    <div className="flex flex-wrap border-green-200 border rounded-lg bg-white p-4">
+      <h1 className="text-2xl font-bold mb-4 w-full">Tour Itineraries</h1>
+      {DetailTour.tour_itineraries.map((itinerary, index) => (
+        <TourCard
+          key={itinerary.id}
+          itinerary={itinerary}
+          index={index}
+          isLast={index === DetailTour.tour_itineraries.length - 1}
+        />
+      ))}
     </div>
   );
 };

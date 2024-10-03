@@ -9,30 +9,35 @@ import RandomButtons from "@/components/templates/RandomButtons";
 import UserProfilePage from "@/components/templates/Travelers";
 import PricePlans from "@/components/templates/PriceSection";
 import { TourDetail } from "@/types/tour"; // Correct import for TourDetail
-import Prices from "@/components/templates/PriceSection";
-import TourCard from "@/components/templates/Itinerary";
+import TravelDateOptions from "./PriceTour";
+import PriceTour from "./PriceTour";
 import DefaultDetails from "../organisms/DefaultDetails";
-import TripExcusrions from "./TripExcursion";
 
 interface MyPageProps {
   DetailTour: TourDetail;
 }
 
-const MyPage: React.FC<MyPageProps> = ({ DetailTour }) => {
+const MyPageTours: React.FC<MyPageProps> = ({ DetailTour }) => {
   return (
     <div>
+      <ImageGallery
+        title={DetailTour.title}
+        breadcrumb={["Home", "Tours", DetailTour.title]}
+        mainContent={DetailTour.description}
+        images={DetailTour.images}
+      />
       <div className="p-4 lg:p-0">
-        <TripExcusrions DetailTour={DetailTour} />
+        <TripInfo DetailTour={DetailTour} />
       </div>
       <hr />
       <div className="p-4 lg:p-0">
-        <Included DetailTour={{ tour_includes: DetailTour.tour_includes }} />
+        <Included DetailTour={DetailTour} />
         <hr />
-        <TourCard
+        <TourItinerary
           DetailTour={{ tour_itineraries: DetailTour.tour_itineraries }}
         />
         <hr />
-        <Prices DetailTour={{ tour_prices: DetailTour.tour_prices }} />
+        <PriceTour DetailTour={{ tour_prices: DetailTour.tour_prices }} />
         <hr />
         {/* <UserProfilePage /> */}
         <FAQ
@@ -49,4 +54,4 @@ const MyPage: React.FC<MyPageProps> = ({ DetailTour }) => {
   );
 };
 
-export default MyPage;
+export default MyPageTours;

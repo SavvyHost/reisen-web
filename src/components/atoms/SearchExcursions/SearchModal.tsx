@@ -85,7 +85,7 @@ const SearchModal: React.FC<SearchModalProps> = ({
             zIndex: 10, // Ensure the button is above all other content
           }}
         >
-          <CloseIcon className="text-red-700" />
+          <CloseIcon className="text-green-700" />
         </IconButton>
 
         <div className="flex flex-col space-y-4 mt-10">
@@ -97,11 +97,13 @@ const SearchModal: React.FC<SearchModalProps> = ({
           <DatePickerInput
             selectedDate={selectedDate}
             onDateChange={handleDateChange}
-            width="100%" // You can adjust this width as needed
+            mobileWidth="100%" // Full width on mobile
+            laptopWidth="100%" // Fixed width on laptop
+            height="40px"
             labelProps={{
               fontSize: "14px",
               color: "rgba(0, 0, 0, 0.6)",
-              transform: "translate(14px, 20px) scale(1)",
+              transform: "translate(14px, 12px) scale(1)",
             }}
           />
           <Button
@@ -109,7 +111,7 @@ const SearchModal: React.FC<SearchModalProps> = ({
             variant="contained"
             color="primary"
             fullWidth
-            className="bg-red-700"
+            className="bg-green-700"
           >
             Search
           </Button>

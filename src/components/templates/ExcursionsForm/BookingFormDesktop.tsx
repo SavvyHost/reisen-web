@@ -2,6 +2,7 @@ import Thanks from "@/components/molecules/Thanks";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import MainDataBookingForm from "./MainDataBookingForm";
+import DefaultDetails from "@/components/organisms/DefaultDetails";
 
 export default function BookingFormDesktop({ DetailTour }) {
   const [isThanksVisible, setIsThanksVisible] = useState<boolean>(false);
@@ -10,7 +11,7 @@ export default function BookingFormDesktop({ DetailTour }) {
   };
 
   return (
-    <div className="hidden md:block p-6 bg-white border border-green-200 rounded-lg shadow-md">
+    <div className="block p-6 bg-white rounded-lg border shadow-md">
       <h2 className="text-sm text-gray-500 mb-2">
         From ${DetailTour?.min_price}
       </h2>

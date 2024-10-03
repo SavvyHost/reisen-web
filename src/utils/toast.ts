@@ -16,7 +16,7 @@ const toastOptions: ToastOptions_TP = {
 };
 
 const STYLES = {
-  success: 'text-mainred',
+  success: 'text-mainGreen',
   error: 'bg-mainRed text-white',
   info: 'bg-blue-300 text-white',
   loading: 'bg-blue-300 text-white',

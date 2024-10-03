@@ -1,96 +1,90 @@
-import React from "react";
-import Outline from "../../../public/assets/ic_outline-photo.png"; // Import your image
-import ExpertGuidesCard from "../molecules/WhyUs";
+import { FC } from "react";
 import Slider from "react-slick";
+import { FaLeaf, FaShieldAlt, FaCompass, FaHandsHelping } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const WhyUsSection: React.FC = () => {
-  const guides = [
+const FeatureSection: FC = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
+  const features = [
     {
-      id: 1,
-      title: "Expert Guide 1",
-      description: "Explore the pyramids with expert knowledge.",
-      image: Outline,
+      icon: FaLeaf,
+      title: "Sustainable Travel",
+      description:
+        "Adventure sustainably with TourRadar. We are committed to conscious travel.",
+      link: "View our pledge",
+      href: "#",
     },
     {
-      id: 2,
-      title: "Expert Guide 2",
-      description: "Discover the treasures of ancient Egypt.",
-      image: Outline,
+      icon: FaShieldAlt,
+      title: "Trust and Confidence",
+      description:
+        "Book with confidence through verified operators and secure payment systems.",
+      link: "Learn more",
+      href: "#",
     },
     {
-      id: 3,
-      title: "Expert Guide 3",
-      description: "Experience the Nile like never before.",
-      image: Outline,
+      icon: FaCompass,
+      title: "Discover New Places",
+      description:
+        "Explore destinations you've never been to with carefully curated tours that highlight local cultures.",
+      link: "Start exploring",
+      href: "#",
     },
     {
-      id: 4,
-      title: "Expert Guide 4",
-      description: "Uncover the mysteries of the Sphinx.",
-      image: Outline,
+      icon: FaHandsHelping,
+      title: "Support Local Communities",
+      description:
+        "Every booking you make contributes to the wellbeing of local communities around the globe.",
+      link: "Learn how",
+      href: "#",
     },
   ];
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1.2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const FeatureItem = ({ icon: Icon, title, description, link, href }) => (
+    <div className="flex flex-col items-center text-center">
+      <div className="w-16 h-16 mb-4 text-green-600 flex items-center justify-center">
+        <Icon className="w-12 h-12" />
+      </div>
+      <h3 className="text-lg font-semibold">{title}</h3>
+      <p className="text-gray-500 max-w-xs">
+        {description}
+        <a href={href} className="text-green-500">
+          {" "}
+          {link}
+        </a>
+        .
+      </p>
+    </div>
+  );
 
   return (
-    <div className="py-8">
-      <h2 className="text-left text-black font-segoe sm:font-semi-bold font-medium text-2xl md:text-special-offer md:p-10 p-5">
-        Why Choose Us
-      </h2>
-
-      {/* Mobile Slider */}
-      <div className="block md:hidden">
+    <section className="max-w-screen-xl mx-auto py-10 flex flex-col items-center">
+      {/* Slick Slider for mobile */}
+      <div className="block lg:hidden w-full">
         <Slider {...settings}>
-          {guides.map((guide) => (
-            <ExpertGuidesCard
-              key={guide.id}
-              title={guide.title}
-              description={guide.description}
-              image={guide.image}
-            />
+          {features.map((feature, index) => (
+            <FeatureItem key={index} {...feature} />
           ))}
         </Slider>
       </div>
 
-      {/* Desktop Flex Layout */}
-      <div className="hidden md:flex flex-wrap justify-center px-24">
-        {guides.map((guide) => (
-          <ExpertGuidesCard
-            key={guide.id}
-            title={guide.title}
-            description={guide.description}
-            image={guide.image}
-          />
+      {/* Regular View for larger screens */}
+      <div className="hidden lg:flex justify-center items-center space-x-12">
+        {features.map((feature, index) => (
+          <FeatureItem key={index} {...feature} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default WhyUsSection;
+export default FeatureSection;

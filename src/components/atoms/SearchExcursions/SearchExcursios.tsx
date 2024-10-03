@@ -26,7 +26,7 @@ const SearchExcursions: React.FC = () => {
     <div>
       {/* Mobile Button */}
       <Button
-        className="fixed top-[67px] w-full left-0 z-30 sm:hidden bg-white text-gray-400 font-segoe rounded-md px-4 py-4 hover:bg-white"
+        className="fixed top-[67px] w-full left-0 z-30 sm:hidden bg-white text-gray-400 font-segoe rounded-md  py-4 hover:bg-white"
         onClick={() => setOpenModal(true)}
       >
         Search For an excursion or activity <Search className="ml-4" />
@@ -45,7 +45,8 @@ const SearchExcursions: React.FC = () => {
         <DatePickerInput
           selectedDate={selectedDate}
           onDateChange={handleDateChange}
-          width="200px"
+          mobileWidth="100%" // Full width on mobile
+          laptopWidth="40%" // Fixed width on laptop
           height="40px"
           labelProps={{
             fontSize: "14px",

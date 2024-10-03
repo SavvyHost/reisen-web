@@ -1,69 +1,62 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-// Define the FAQ item type
-interface FAQItem {
+interface FAQItemProps {
   question: string;
   answer: string;
 }
 
-// Define the type for DetailTour including FAQs
-interface DetailTour {
-  tour_frequently_questions?: FAQItem[];
-}
-
-// Define the FAQ component with typed props
-const FAQ: React.FC<{ DetailTour: DetailTour }> = ({ DetailTour }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleItem = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+const FAQItem: FC<FAQItemProps> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
-      <h2 className="text-3xl font-segoe text-start mt-9 mb-6">
-        Frequently Asked Questions
-      </h2>
-      <div className="relative w-full mt-8 sm:mx-auto sm:max-w-2xl sm:px-10">
-        <div className="mx-auto px-5">
-          <div className="mx-auto mt-8 grid max-w-xl divide-y divide-neutral-200">
-            {DetailTour?.tour_frequently_questions?.map((faq, index) => (
-              <div key={index} className="py-5">
-                <div className="group">
-                  <div
-                    className="flex cursor-pointer list-none items-center justify-between font-medium"
-                    onClick={() => toggleItem(index)}
-                  >
-                    <span>{faq.question}</span>
-                    <span
-                      className={`transition ${
-                        openIndex === index ? "rotate-180" : ""
-                      }`}
-                    >
-                      <svg
-                        fill="none"
-                        height="24"
-                        shapeRendering="geometricPrecision"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                        width="24"
-                      >
-                        <path d="M6 9l6 6 6-6"></path>
-                      </svg>
-                    </span>
-                  </div>
-                  {openIndex === index && (
-                    <p className="mt-3 text-neutral-600">{faq.answer}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+    <div className="border-b py-4">
+      <div
+        className="flex justify-between items-center cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h4 className="text-lg font-semibold">{question}</h4>
+        {isOpen ? (
+          <div>
+            <FaChevronUp />
           </div>
-        </div>
+        ) : (
+          <div>
+            <FaChevronDown />
+          </div>
+        )}
       </div>
+      <div
+        className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
+          isOpen ? "max-h-96" : "max-h-0"
+        }`}
+      >
+        <p className="mt-2 text-gray-600">{answer}</p>
+      </div>
+    </div>
+  );
+};
+
+interface FAQProps {
+  DetailTour: {
+    tour_frequently_questions: {
+      question: string;
+      answer: string;
+    }[];
+  };
+}
+
+const FAQ: FC<FAQProps> = ({ DetailTour }) => {
+  const { tour_frequently_questions } = DetailTour;
+
+  return (
+    <div className="w-full mx-auto border px-4 py-2 mt-2 bg-white border-green-200 rounded-lg shadow-md">
+      <h3 className="lg:text-2xl text-xl font-semibold mb-1">
+        Frequently Asked Questions
+      </h3>
+      {tour_frequently_questions.map((item, index) => (
+        <FAQItem key={index} question={item.question} answer={item.answer} />
+      ))}
     </div>
   );
 };
