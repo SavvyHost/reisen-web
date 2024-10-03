@@ -13,9 +13,9 @@ export const Weight = ({
   return (
     <FaWeightHanging
       size={size}
-      className={` fill-mainGreen cursor-pointer  ${className}`}
+      className={` fill-mainred cursor-pointer  ${className}`}
       onClick={action}
       {...props}
     />
-  )
+  );
 }

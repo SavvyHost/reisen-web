@@ -37,7 +37,7 @@ const CtaSection = (props: Props) => {
           </p>
           <Link
             href=""
-            className="lg:mt-8 mt-6 mb-3 bg-green-800 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
+            className="lg:mt-8 mt-6 mb-3 bg-red-800 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
           >
             Book Now
           </Link>

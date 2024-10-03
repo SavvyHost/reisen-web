@@ -34,7 +34,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         width={100}
                         height={100}
                       />
-                      <div className="absolute top-2 left-2 bg-green-800 text-white text-xs font-segoe font-medium px-2 py-1 rounded">
+                      <div className="absolute top-2 left-2 bg-red-800 text-white text-xs font-segoe font-medium px-2 py-1 rounded">
                         Top Rated
                       </div>
                       <Button className="absolute top-2 right-2 text-white hover:text-red-500">
@@ -66,7 +66,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         </span>
                       </div>
                       <div className="mt-1">
-                        <span className="font-segoe text-xl text-green-700">
+                        <span className="font-segoe text-xl text-red-700">
                           From $
                           {excursion.tour_prices[0]?.prices[0]?.price || "N/A"}
                         </span>
