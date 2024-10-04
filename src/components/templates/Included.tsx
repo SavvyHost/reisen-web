@@ -1,3 +1,4 @@
+import { Check, X } from "lucide-react";
 import { FC } from "react";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
@@ -9,39 +10,67 @@ interface TourInclude {
 
 interface OriginalExperienceProps {
   DetailTour: {
-    tour_includes?: TourInclude[]; // Made optional
+    tour_includes?: TourInclude[];
   };
 }
 
 const OriginalExperience: FC<OriginalExperienceProps> = ({ DetailTour }) => {
-  // Check if tour_includes is undefined
   if (!DetailTour || !DetailTour.tour_includes) {
-    return null; // or return an alternative message if you prefer
+    return null;
   }
 
+  const includes = DetailTour.tour_includes.filter(
+    (item) => item.status === "yes"
+  );
+  const excludes = DetailTour.tour_includes.filter(
+    (item) => item.status === "no"
+  );
+
   return (
-    <div className="w-full mx-auto mb-3 mt-2 px-4 py-2 border bg-white border-red-200 rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">Includes</h2>
-
+    <div className="w-full flex flex-col lg:flex-row gap-6 mb-3 mt-2">
       {/* Includes Section */}
-      <section className="mb-6">
-        <ul className="ml-2 lg:ml-6 mt-2">
-          {DetailTour.tour_includes.map((item) => (
-            <li key={item.id} className="flex items-center text-gray-600">
-              <div>
-                {item.status === "yes" ? (
-                  <FaCheckCircle className="text-red-600 mr-2" />
-                ) : (
-                  <FaTimesCircle className="text-red-600 mr-2" />
-                )}
-              </div>
-              {item.description}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <div className="w-full lg:w-1/2">
+        <h2 className="text-2xl font-semibold mb-4 text-black underline">
+          Includes
+        </h2>
+        <section className="mb-6">
+          {includes.length > 0 ? (
+            <ul className="flex flex-col gap-2">
+              {includes.map((item) => (
+                <li key={item.id} className="flex items-center text-gray-600">
+                  <div>
+                    <Check className="text-green-600 mr-2" />
+                  </div>
+                  <span>{item.description}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-500">No items included.</p>
+          )}
+        </section>
+      </div>
 
-      {/* Other sections remain unchanged */}
+      {/* Excludes Section */}
+      <div className="w-full lg:w-1/2 ">
+        <h2 className="text-2xl font-semibold mb-4 text-black underline">
+          Excludes
+        </h2>
+        <section>
+          {excludes.length > 0 ? (
+            <ul className="flex flex-col gap-2">
+              {excludes.map((item) => (
+                <li key={item.id} className="flex items-center text-gray-600">
+                  <X className="text-red-600 mr-2" />
+                  <span>{item.description}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-500">No items excluded.</p>
+          )}
+        </section>
+      </div>
     </div>
   );
 };

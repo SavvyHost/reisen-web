@@ -1,3 +1,4 @@
+import { Plane, TramFront } from "lucide-react";
 import { FC } from "react";
 
 interface PriceItemProps {
@@ -7,9 +8,12 @@ interface PriceItemProps {
 }
 
 const PriceItem: FC<PriceItemProps> = ({ title, description, price }) => (
-  <div className="flex justify-between items-center border-b py-4">
-    <div>
-      <h4 className="text-lg font-semibold">{title}</h4>
+  <div className="flex justify-between items-center border-b py-4 hover:bg-gray-50 cursor-pointer">
+    <div className="">
+      <div className="flex  gap-2 ">
+        <Plane className="text-red-700" />
+        <h4 className="text-lg font-semibold">{title}</h4>
+      </div>
       <p className="text-sm text-gray-600">{description}</p>
     </div>
     <span className="text-lg font-bold">{price}</span>
@@ -33,8 +37,8 @@ const Prices: FC<PricesProps> = ({ DetailTour }) => {
   const tourPrices = DetailTour.tour_prices;
 
   return (
-    <div className="w-full mx-auto mb-3 border rounded-lg px-4 py-2 mt-2 bg-white border-red-200 shadow-md">
-      <h3 className="text-2xl font-semibold mb-2">Tour Prices</h3>
+    <div className="w-full mx-auto my-3">
+      <h3 className="text-2xl font-semibold mb-2 underline">Tour Prices</h3>
       {tourPrices.map((tourPrice, index) => (
         <div key={index}>
           <h4 className="text-xl font-semibold mb-2">{tourPrice.title}</h4>

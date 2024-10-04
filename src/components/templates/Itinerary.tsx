@@ -1,6 +1,16 @@
 import React, { useState } from "react";
-import { Heart, ChevronDown, ChevronUp } from "lucide-react";
+import { Heart, Sun, Mountain, Star, MapPin } from "lucide-react"; // Import different icons
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+
+// Mapping of itinerary indexes to icons
+const iconMap = {
+  0: <Heart className="text-red-500 w-6 h-6" />,
+  1: <Sun className="text-yellow-500 w-6 h-6" />,
+  2: <Mountain className="text-green-500 w-6 h-6" />,
+  3: <Star className="text-blue-500 w-6 h-6" />,
+  4: <MapPin className="text-purple-500 w-6 h-6" />,
+  // Add more icons as needed
+};
 
 const TourCard = ({ itinerary, index, isLast }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,15 +20,16 @@ const TourCard = ({ itinerary, index, isLast }) => {
   };
 
   return (
-    <div className="w-full overflow-hidden my-1 relative">
-      {/* Vertical line and dot */}
-      <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-300">
-        <div className="absolute left-1/2 top-6 w-4 h-4 rounded-full bg-red-500 transform -translate-x-1/2 -translate-y-1/2" />
+    <div className="w-full my-1 relative flex items-start">
+      {/* Icon on the left side */}
+      <div className="flex-shrink-0 mr-3 mt-1">
+        {iconMap[index] || iconMap[0]}{" "}
+        {/* Use the mapped icon or a default icon */}
       </div>
 
       {/* Content moved to the right */}
-      <div className="lg:ml-10 ml-5">
-        <div className="px-6 py-4">
+      <div className="lg:ml-2 ml-1 w-full">
+        <div className="lg:px-6 px-4 py-2 border-l-2 border-red-500">
           <div
             className="flex justify-between items-center font-semibold text-base lg:text-xl mb-2 cursor-pointer"
             onClick={toggleCollapse}
@@ -68,8 +79,10 @@ const TourCard = ({ itinerary, index, isLast }) => {
 
 const TourItinerary = ({ DetailTour }) => {
   return (
-    <div className="flex flex-wrap border-red-200 border rounded-lg bg-white p-4">
-      <h1 className="text-2xl font-bold mb-4 w-full">Tour Itineraries</h1>
+    <div className="flex flex-wrap ">
+      <h1 className="text-2xl font-bold my-4 w-full underline">
+        Tour Itineraries
+      </h1>
       {DetailTour.tour_itineraries.map((itinerary, index) => (
         <TourCard
           key={itinerary.id}

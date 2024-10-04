@@ -25,10 +25,11 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
             <div key={excursion.id} className="px-[5px] md:px-[5px] mb-3">
               <Link href={`/top-excursions/${excursion.id}`}>
                 <div className="px-[4px] mb-3">
-                  <div className="flex flex-col max-w-lg mx-auto cursor-pointer hover:shadow-xl  rounded-2xl overflow-hidden  h-[450px] transition-all duration-300 ease-in-out">
-                    <div className="relative h-72 overflow-hidden">
+                  <div className="group flex flex-col hover:border-red-500 hover:border max-w-lg mx-auto cursor-pointer hover:shadow-xl shadow-lg bg-white overflow-hidden h-[450px] transition-all duration-300 ease-in-out">
+                    {/* Image Section */}
+                    <div className="relative h-64 w-full mx-auto overflow-hidden">
                       <Image
-                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
                         src={excursion.main_image.url}
                         alt={excursion.title}
                         width={100}
@@ -41,6 +42,8 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         <BsHeart size={24} />
                       </Button>
                     </div>
+
+                    {/* Content Section */}
                     <div className="flex flex-col flex-grow px-4 py-4">
                       <div className="flex items-center text-gray-600 text-sm mb-2 font-segoe">
                         <BsMap size={16} className="mr-1" />
@@ -48,16 +51,19 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                           {excursion.destination}
                         </span>
                       </div>
-                      <h2 className="font-segoe text-xl mb-2 truncate">
+
+                      {/* Title with underline on hover */}
+                      <h2 className="font-segoe text-xl mb-2 truncate group-hover:underline">
                         {excursion.title}
                       </h2>
+
                       <div className="flex items-center text-gray-600 text-sm mb-4">
                         <BsClock size={16} className="mr-1" />
                         <span>{excursion.duration} Hours</span>
                       </div>
                       <div className="flex items-center text-gray-600 text-sm mb-4">
                         <BsLuggage size={16} className="mr-3" />
-                        <span>Age Range : {excursion.age_range} </span>
+                        <span>Age Range : {excursion.age_range}</span>
                       </div>
 
                       <div className="text-sm">

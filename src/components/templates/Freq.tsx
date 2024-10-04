@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Plus, Minus } from "lucide-react"; // Import icons from Lucide
 
 interface FAQItemProps {
   question: string;
@@ -10,28 +10,26 @@ const FAQItem: FC<FAQItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b py-4">
+    <div className="">
       <div
-        className="flex justify-between items-center cursor-pointer"
+        className="flex items-center cursor-pointer "
         onClick={() => setIsOpen(!isOpen)}
       >
+        <div className="mr-2 text-lg text-gray-600 border border-gray-300 my-2 rounded-none py-2 px-4">
+          {isOpen ? (
+            <Minus className="text-red-500" />
+          ) : (
+            <Plus className="text-green-500" />
+          )}
+        </div>
         <h4 className="text-lg font-semibold">{question}</h4>
-        {isOpen ? (
-          <div>
-            <FaChevronUp />
-          </div>
-        ) : (
-          <div>
-            <FaChevronDown />
-          </div>
-        )}
       </div>
       <div
         className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
           isOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <p className="mt-2 text-gray-600">{answer}</p>
+        <p className="mt-2 p-4 text-gray-600">{answer}</p>
       </div>
     </div>
   );
@@ -50,8 +48,8 @@ const FAQ: FC<FAQProps> = ({ DetailTour }) => {
   const { tour_frequently_questions } = DetailTour;
 
   return (
-    <div className="w-full mx-auto border px-4 py-2 mt-2 bg-white border-red-200 rounded-lg shadow-md">
-      <h3 className="lg:text-2xl text-xl font-semibold mb-1">
+    <div className="w-full">
+      <h3 className="lg:text-2xl text-xl font-semibold my-4 underline">
         Frequently Asked Questions
       </h3>
       {tour_frequently_questions.map((item, index) => (

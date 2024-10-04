@@ -15,9 +15,9 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="border-b border-gray-200 py-4 ">
+    <div className="border-b border-gray-200 py-4">
       <button
-        className="flex justify-between items-center  w-full text-left font-segoe text-lg"
+        className="flex justify-between items-center w-full text-left font-segoe text-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         {title}
@@ -27,7 +27,15 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           <ChevronDown size={20} color="black" />
         )}
       </button>
-      {isOpen && <div className="mt-2 ">{children}</div>}
+
+      {/* Wrapping the content with a div to control the height and add a smooth transition */}
+      <div
+        className={`transition-all duration-500 overflow-hidden ${
+          isOpen ? "max-h-screen" : "max-h-0"
+        }`}
+      >
+        <div className="mt-2">{children}</div>
+      </div>
     </div>
   );
 };
