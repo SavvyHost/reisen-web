@@ -58,7 +58,7 @@ export default function Adventures() {
 
       <Slider ref={sliderRef} {...settings} className="flex justify-start">
         {cardData.map((card) => (
-          <div key={card.id} className="flex justify-start cursor-pointer">
+          <div key={card.id} className="flex justify-start cursor-pointer ">
             <div className="flex flex-col items-start shadow-sm hover:shadow-xl relative group">
               {/* Card Container */}
               <div className="flex pr-2 flex-col items-start group relative">

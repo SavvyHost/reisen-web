@@ -134,3 +134,10 @@ body {
     pointer-events: auto;
     /* Allow clicking on the "See More" button */
 }
+
+.input-fixed-size {
+    width: 300px;
+    /* Adjust this value as needed */
+    height: 48px;
+    /* Adjust this value as needed */
+}
