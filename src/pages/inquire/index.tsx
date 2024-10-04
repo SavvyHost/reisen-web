@@ -56,7 +56,7 @@ const Inquire = (props: Props) => {
 
         {/* Right Section: Form */}
         <div className="flex flex-col justify-center">
-          <h2 className="text-3xl text-yellow-600 text-center mb-8 capitalize font-segoe">
+          <h2 className="text-3xl text-red-600 text-center mb-8 capitalize font-segoe">
             Tell us about the travelers
           </h2>
           <form className="space-y-6" onSubmit={formik.handleSubmit}>
