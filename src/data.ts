@@ -1,6 +1,6 @@
-import First from "../public/assets/firstImage.jpeg"
-import Second from "../public/assets/Secondimage.jpeg";
-import Third from "../public/assets/roud.jpeg";
+import First from "../public/assets/5-TOP-10-amazing-places-to-visit-in-Egypt-jintravel.com 1.png"
+import Second from "../public/assets/camels.jpeg";
+import Third from "../public/assets/bgblogs.png";
 import Egy from "../public/assets/firstImage.jpeg";
 import ImageCard from "../public/assets/Secondimage.jpeg";
 import Try from "../public/assets/Secondimage.jpeg";
@@ -59,18 +59,6 @@ export const cardData = [
     hoverText: "Uncover Secrets",
   },
   {
-    id: 4,
-    image: Third,
-    title: "Explore",
-    hoverText: "Uncover Secrets",
-  },
-  {
-    id: 5,
-    image: Third,
-    title: "Explore",
-    hoverText: "Uncover Secrets",
-  },
-  {
     id: 1,
     image: First,
     title: "Solo",
@@ -88,18 +76,7 @@ export const cardData = [
     title: "Explore",
     hoverText: "Uncover Secrets",
   },
-  {
-    id: 4,
-    image: Third,
-    title: "Explore",
-    hoverText: "Uncover Secrets",
-  },
-  {
-    id: 5,
-    image: Third,
-    title: "Explore",
-    hoverText: "Uncover Secrets",
-  },
+
   // Add more cards as needed
 ];
 

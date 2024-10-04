@@ -6,7 +6,7 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi"; // Importing ico
 
 const NextArrow = ({ onClick }) => (
   <div
-    className="absolute -top-5 lg:block hidden right-4 transform -translate-y-1/2 cursor-pointer  rounded-full p-2"
+    className="absolute -top-5 lg:block hidden right-4 transform -translate-y-1/2 cursor-pointer rounded-full p-2"
     onClick={onClick}
   >
     <FiChevronRight size={24} /> {/* Right arrow icon */}
@@ -34,8 +34,6 @@ export default function Adventures() {
     centerPadding: "0",
     arrows: false, // Disable default arrows
     draggable: true,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -60,17 +58,20 @@ export default function Adventures() {
 
       <Slider ref={sliderRef} {...settings} className="flex justify-start">
         {cardData.map((card) => (
-          <div key={card.id} className="flex justify-start ">
-            <div className="flex flex-col  items-start hover:rounded-lg relative group">
+          <div key={card.id} className="flex justify-start">
+            <div className="flex flex-col items-start shadow-sm hover:shadow-xl relative group">
               {/* Card Container */}
               <div className="flex pr-2 flex-col items-start group relative">
-                <div className="relative bg-white shadow-md overflow-hidden transition-all duration-500 rounded-md group-hover:rounded-lg">
+                <div className="relative bg-white shadow-md overflow-hidden transition-all duration-500 ">
                   {/* Image Container */}
                   <div className="relative">
                     <Image
-                      className="w-full h-[300px] object-cover transition-transform transform group-hover:scale-110 duration-500"
+                      className="w-50 h-44 object-cover transition-transform transform group-hover:scale-110 duration-500"
                       src={card.image}
                       alt={card.title}
+                      // Ensures the image scales with the container
+                      width={256} // Set the desired width
+                      height={240} // Adjust the height according to your design
                     />
                     {/* Overlay Text */}
                     <div className="absolute inset-0 flex flex-col font-segoe justify-center items-center text-center p-4 text-white bg-black bg-opacity-30 hover:bg-opacity-40 hover:transition-all transition-opacity duration-500 opacity-100 group-hover:opacity-100">

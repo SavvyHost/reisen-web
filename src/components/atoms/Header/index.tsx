@@ -56,7 +56,7 @@ export const Header = ({ header, className }: any) => {
           {/* Logo aligned to the left */}
           <div className="flex-shrink-0 lg:w-2/12">
             <Link href="/">
-              <span className="text-xl font-bold">Egypt Rasain Tours</span>
+              <span className="text-xl font-bold">Egypt Rasain Tour</span>
             </Link>
           </div>
 
@@ -79,7 +79,7 @@ export const Header = ({ header, className }: any) => {
             >
               <Globe className="w-6 h-6 text-[#132f4e]" />
             </button>
-            <button className="bg-red-700 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#45ca34]">
+            <button className="bg-red-700 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-red-600">
               Book Tour Now
             </button>
           </div>

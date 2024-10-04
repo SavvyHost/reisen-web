@@ -40,15 +40,15 @@ export default function Home({
   Destinations,
   attractionsData, // New: Destructure attractionsData
 }: HomeProps) {
-  const limitedDestinations = Destinations.slice(0, 8);
-  const limitedAttractions = attractionsData.slice(0, 9);
+  const limitedDestinations = Destinations.slice(0, 4);
+  const limitedAttractions = attractionsData.slice(0, 8);
 
   return (
     <>
       <HeroSection />
-      <div className="lg:px-16 p-4 ">
+      {/* <div className="lg:px-16 p-4 ">
         <OffersSection />
-      </div>
+      </div> */}
       <div className="lg:px-16 p-4 ">
         <WhyUsSection />
       </div>
@@ -65,12 +65,12 @@ export default function Home({
       <div className="lg:px-16 p-4 bg-[#FAFAFA] ">
         <AdventuresSection />
       </div>
-      <div className="lg:px-16 p-4 bg-[#FAFAFA] ">
+      {/* <div className="lg:px-16 p-4 bg-[#FAFAFA] ">
         <CallToActionSection />
-      </div>
-      <div className="lg:px-16 p-4  ">
+      </div> */}
+      {/* <div className="lg:px-16 p-4  ">
         <PeaopleSaySection />
-      </div>
+      </div> */}
 
       {/* Pass attractions data */}
 
