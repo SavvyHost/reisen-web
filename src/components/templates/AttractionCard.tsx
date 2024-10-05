@@ -55,7 +55,17 @@ const AttractionCard: React.FC<AttractionCardProps> = ({
 
         {/* Info Section */}
         <div className="p-4">
-          <h3 className="font-bold text-lg text-gray-800">{title}</h3>
+          <h3
+            className="font-bold text-lg text-gray-800 overflow-hidden"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              wordBreak: "break-word",
+            }}
+          >
+            {title}
+          </h3>
 
           {/* Price Section */}
           <div className="flex items-center text-gray-600 text-sm mb-2">
