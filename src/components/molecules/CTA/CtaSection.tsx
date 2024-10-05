@@ -29,15 +29,15 @@ const CtaSection = (props: Props) => {
           <h5 className="text-2xl font-normal mb-4 lg:text-3xl text-gray-950">
             Book travel services from around the world. Anytime. Anywhere.
           </h5>
-          <p className="text-lg lg:text-xl text-black">
-            Technology and travel agents' expertise come together to create a
+          <p className="text-lg lg:text-xl text-red">
+            Technology and travel agents expertise come together to create a
             supercharged product that increases your revenue and efficiency.
             Check availability in real-time, book services, and receive booking
             confirmations immediately.
           </p>
           <Link
             href=""
-            className="lg:mt-8 mt-6 mb-3 bg-green-800 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
+            className="lg:mt-8 mt-6 mb-3 bg-gray-800 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
           >
             Book Now
           </Link>

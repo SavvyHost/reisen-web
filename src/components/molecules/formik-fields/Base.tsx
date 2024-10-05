@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const GeneralInputClass: string = "form-input px-4 py-[.30rem] w-full";
@@ -7,7 +7,7 @@ const baseInput = tv({
   base: "!mb-0 rounded-md !border  border-1  !border-[#bbbdc8] focus:!border-1 focus:!border-[#bbbdc8] focus:outline-0 focus-shadow-none h-[41px] focus:!shadow-none",
   variants: {
     error: {
-      true: "border-maingreen",
+      true: "border-mainred",
     },
     type: {
       checkbox:
@@ -39,54 +39,39 @@ export interface BaseInputProps_TP
   className?: string;
   autocomplete?: string;
   error?: boolean;
-  ref?: any;
   label?: string;
-  labelDirection?: string;
+  labelDirection?: "left" | "right";
 }
 
-export const BaseInput = forwardRef(
-  (
-    {
-      error,
-      label,
-      labelDirection = "left",
-      ...props
-    }: BaseInputProps_TP & BaseInputVariants_TP,
-    ref: any
-  ) => {
+export const BaseInput = forwardRef<
+  HTMLInputElement,
+  BaseInputProps_TP & BaseInputVariants_TP
+>(({ error, label, labelDirection = "left", className, ...props }, ref) => {
+  const inputClasses = baseInput({
+    error: error,
+    type: props.type || "text",
+  });
 
-    return (
-      <div
-        className={`flex flex-col ${labelDirection === "right" && "items-end"}`}
-      >
-        {label && (
-          <label
-            htmlFor={props.id}
-            className={`mb-3 text-sm ${
-              labelDirection === "right" 
-            }`}
-          >
-            {label}
-          </label>
-        )}
-        <input
-          {...props}
-          type={props.type || "text"}
-          name={props.name}
-          id={props.id}
-          {...(props.placeholder ? { placeholder: props.placeholder } : {})}
-          disabled={props.disabled}
-          className={baseInput({
-            error: error,
-            className: props.className,
-            type: props.type || "text",
-          })}
-          autoComplete={"off"}
-          placeholder={props?.placeholder}
-          value={props.value}
-          ref={ref}
-        />
-      </div>
-    );
-  }
-);
+  return (
+    <div
+      className={`flex flex-col ${
+        labelDirection === "right" ? "items-end" : "items-start"
+      }`}
+    >
+      {label && (
+        <label htmlFor={props.id} className="mb-3 text-sm">
+          {label}
+        </label>
+      )}
+      <input
+        {...props}
+        type={props.type || "text"}
+        className={`${inputClasses} ${className}`} // Combine tailwind classes and prop className
+        autoComplete={props.autoComplete || "off"}
+        ref={ref}
+      />
+    </div>
+  );
+});
+
+BaseInput.displayName = "BaseInput"; // Add display name for debugging
