@@ -141,3 +141,9 @@ body {
     height: 48px;
     /* Adjust this value as needed */
 }
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+    /* To remove any additional shadow that might appear on focus */
+}

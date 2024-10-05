@@ -45,7 +45,7 @@ const ExcursionCard: React.FC<ExcursionCardProps> = ({
         >
           <Heart
             className={`w-5 h-5 ${
-              isFavorite ? "text-red-500" : "text-gray-400"
+              isFavorite ? "text-green-500" : "text-gray-400"
             }`}
           />
         </button>

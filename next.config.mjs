@@ -2,12 +2,12 @@
 const nextConfig = {
   reactStrictMode: false,
   eslint: {
-    ignoreDuringBuilds: true,
+    ignogreenuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  transpilePackages: ['@mui/x-date-pickers'],
+  transpilePackages: ["@mui/x-date-pickers"],
 
   // output: "export",
 

@@ -23,7 +23,7 @@ type Select_TP = {
   modalTitle?: string;
   id: string;
   isMulti?: boolean;
-  required?: boolean;
+  requigreen?: boolean;
   placeholder?: string;
   loadingPlaceholder?: string;
   options: SelectOption_TP[] | undefined;
@@ -65,7 +65,7 @@ export const selectTheme = (theme: Theme) => ({
 export const selectClassNames = (touched: boolean, error: boolean) => ({
   control: ({ menuIsOpen }: { menuIsOpen: boolean }) =>
     `border-style !rounded-md !shadow-none !shadow-md !border-1 date-range-lib h-[41px] ${
-      touched && error ? " !border-mainRed" : ""
+      touched && error ? " !border-maingreen" : ""
     } ${menuIsOpen && "!border-[rgba(0, 29, 110, 0.4)]"}`,
   dropdownIndicator: () => `!text-main`,
   valueContainer: () => `!overflow-x-auto !overflow-y-hidden scrollbar`,
@@ -76,7 +76,7 @@ export const SelectComp = ({
   name,
   id,
   isMulti,
-  required,
+  requigreen,
   placeholder,
   loadingPlaceholder,
   options,
@@ -92,14 +92,14 @@ export const SelectComp = ({
   setOptions,
   modalTitle,
   defaultValue,
-  isClearable=true,
+  isClearable = true,
   ...props
 }: Select_TP) => {
   const animatedComponents = makeAnimated();
   const { setFieldValue, errors, touched, handleBlur } = useFormikContext<{
     [key: string]: any;
   }>();
-  const customNoOptionsMessage = () => ("No options");
+  const customNoOptionsMessage = () => "No options";
 
   const selectProps = {
     ...props,
@@ -111,7 +111,7 @@ export const SelectComp = ({
     defaultValue,
     name,
     isMulti,
-    required,
+    requigreen,
     placeholder: loading ? loadingPlaceholder : placeholder,
     options,
     isClearable,
@@ -130,8 +130,10 @@ export const SelectComp = ({
       setFieldValue(
         name as string,
         isMulti
-        ? (option as MultiValue<SelectOption_TP>)?.map((opt) => opt[fieldKey]) || []
-        : (option as SelectOption_TP)?.[fieldKey] || null,
+          ? (option as MultiValue<SelectOption_TP>)?.map(
+              (opt) => opt[fieldKey]
+            ) || []
+          : (option as SelectOption_TP)?.[fieldKey] || null,
         true
       );
       onChange?.(option);
@@ -143,7 +145,11 @@ export const SelectComp = ({
       <div className="col-span-1">
         <div className="flex flex-col gap-1">
           {label && (
-            <Label htmlFor={id} className="mb-3 text-sm" required={required}>
+            <Label
+              htmlFor={id}
+              className="mb-3 text-sm"
+              requigreen={requigreen}
+            >
               {label}
             </Label>
           )}

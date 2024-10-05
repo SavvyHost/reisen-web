@@ -8,16 +8,16 @@ import { useFormikContext } from "formik";
 function DateInputComp({ name, countDays }) {
   const today = dayjs();
   const daysAfter = countDays;
-  const futureDate = today.add(daysAfter, "day");
+  const futugreenate = today.add(daysAfter, "day");
   const { values, setFieldValue } = useFormikContext();
-  console.log("🚀 ~ DateInputComp ~ values:", values)
+  console.log("🚀 ~ DateInputComp ~ values:", values);
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoItem>
         <DatePicker
           defaultValue={today}
           minDate={today}
-          maxDate={futureDate}
+          maxDate={futugreenate}
           disablePast
           name={name}
           views={["year", "month", "day"]}

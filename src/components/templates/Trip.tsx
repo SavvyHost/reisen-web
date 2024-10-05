@@ -59,7 +59,7 @@ const TourDetails: FC<TourDetailsProps> = ({ DetailTour }) => {
         </div>
 
         <div className="flex items-center ">
-          <AiOutlineInfoCircle className="text-red-500 text-2xl mr-3" />
+          <AiOutlineInfoCircle className="text-green-500 text-2xl mr-3" />
           <span className="text-gray-700">
             Guide Language: {DetailTour.liveGuideLanguage}
           </span>

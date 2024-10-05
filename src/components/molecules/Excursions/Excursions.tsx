@@ -25,7 +25,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
             <div key={excursion.id} className="px-[5px] md:px-[5px] mb-3">
               <Link href={`/top-excursions/${excursion.id}`}>
                 <div className="px-[4px] mb-3">
-                  <div className="group flex flex-col hover:border-red-500 hover:border max-w-lg mx-auto cursor-pointer hover:shadow-xl shadow-lg bg-white overflow-hidden h-[450px] transition-all duration-300 ease-in-out">
+                  <div className="group flex flex-col hover:border-green-500 hover:border max-w-lg mx-auto cursor-pointer hover:shadow-xl shadow-lg bg-white overflow-hidden h-[450px] transition-all duration-300 ease-in-out">
                     {/* Image Section */}
                     <div className="relative h-64 w-full mx-auto overflow-hidden">
                       <Image
@@ -35,10 +35,10 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         width={100}
                         height={100}
                       />
-                      <div className="absolute top-2 left-2 bg-red-800 text-white text-xs font-segoe font-medium px-2 py-1 rounded">
+                      <div className="absolute top-2 left-2 bg-green-800 text-white text-xs font-segoe font-medium px-2 py-1 rounded">
                         Top Rated
                       </div>
-                      <Button className="absolute top-2 right-2 text-white hover:text-red-500">
+                      <Button className="absolute top-2 right-2 text-white hover:text-green-500">
                         <BsHeart size={24} />
                       </Button>
                     </div>
@@ -72,7 +72,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                         </span>
                       </div>
                       <div className="mt-1">
-                        <span className="font-segoe text-xl text-red-700">
+                        <span className="font-segoe text-xl text-green-700">
                           From $
                           {excursion.tour_prices[0]?.prices[0]?.price || "N/A"}
                         </span>

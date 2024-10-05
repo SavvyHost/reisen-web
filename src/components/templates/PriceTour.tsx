@@ -35,7 +35,7 @@ type Props = {
 const roomIcons: Record<string, React.ReactNode> = {
   "Single Room": <Bed className="text-purple-500" />,
   "Double-bedded Room": <Hotel className="text-blue-500" />,
-  "Triple Room": <Users className="text-red-500" />,
+  "Triple Room": <Users className="text-green-500" />,
   "Suite Room": <Crown className="text-green-500" />,
   "Deluxe Room": <Brush className="text-orange-500" />,
   "Presidential Suite": <Key className="text-yellow-500" />,
@@ -44,7 +44,7 @@ const roomIcons: Record<string, React.ReactNode> = {
 
 // Function to get the icon for the room type
 const getRoomIcon = (title: string) => {
-  return roomIcons[title] || <House className="text-red-500" />;
+  return roomIcons[title] || <House className="text-green-500" />;
 };
 
 const PriceTour: React.FC<Props> = ({ DetailTour }) => {

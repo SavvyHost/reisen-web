@@ -239,7 +239,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                     <div className="absolute top-2 left-2 bg-black text-white text-xs font-segoe font-medium px-2 py-1 rounded">
                       Top Rated
                     </div>
-                    <Button className="absolute top-2 right-2 text-white hover:text-red-500">
+                    <Button className="absolute top-2 right-2 text-white hover:text-green-500">
                       <BsHeart size={24} />
                     </Button>
                   </div>
@@ -263,7 +263,7 @@ export default function ExcursionsCardTour({ toursData }: ExcursionsProps) {
                           {[...Array(excursion.starRating)].map((_, index) => (
                             <BsFillCircleFill
                               key={index}
-                              className="text-red-500 w-4 h-4 ml-1"
+                              className="text-green-500 w-4 h-4 ml-1"
                             />
                           ))}
                           <span className="m-2 text-gray-600 text-sm">

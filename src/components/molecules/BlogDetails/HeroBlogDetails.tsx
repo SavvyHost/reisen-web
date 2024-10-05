@@ -33,7 +33,7 @@ const HeroSectionBlogs: React.FC<HeroSectionBlogsProps> = ({ DetailBlogs }) => {
         />
       </div>
 
-      {/* Blurred Card */}
+      {/* Blurgreen Card */}
       <div className="absolute inset-x-4 transform translate-y-16 md:inset-x-8 bottom-8 md:bottom-12 mx-auto p-4 md:p-6 bg-white bg-opacity-40 backdrop-blur-md rounded-lg shadow-lg max-w-xs md:max-w-3xl h-auto flex flex-col items-center justify-between">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-xl md:text-2xl font-semibold text-gray-800 mb-2 md:mb-4">

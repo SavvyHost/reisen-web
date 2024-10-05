@@ -16,7 +16,7 @@ export default function BluerForm() {
           <div className="flex flex-row space-x-2 mb-3">
             {/* Link for Tour Package */}
             <Link href="/top-packages/" className="relative flex-1">
-              <BsLuggageFill className="absolute left-3 top-1/2 transform -translate-y-1/2 text-red-500" />
+              <BsLuggageFill className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
               <input
                 type="text"
                 placeholder="Tour Package"
@@ -27,7 +27,7 @@ export default function BluerForm() {
 
             {/* Link for Excursions */}
             <Link href="/top-excursions/" className="relative flex-1">
-              <FaBus className="absolute left-3 top-1/2 transform -translate-y-1/2 text-red-500" />
+              <FaBus className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
               <input
                 type="text"
                 placeholder="Excursions"
@@ -38,7 +38,7 @@ export default function BluerForm() {
           </div>
 
           <div className="relative mb-3">
-            <select className="w-full px-3 py-2 border border-[#FFF3C5] rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 text-sm">
+            <select className="w-full px-3 py-2 border border-[#FFF3C5] rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
               <option value="Luxor">Luxor</option>
               <option value="Hurghada">Hurghada</option>
               <option value="Sharm">Sharm</option>
@@ -47,7 +47,7 @@ export default function BluerForm() {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:space-x-2">
-            <Button className="w-full capitalize sm:w-auto py-2 text-white px-3 bg-red-600 font-segoe rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 text-sm">
+            <Button className="w-full capitalize sm:w-auto py-2 text-white px-3 bg-green-600 font-segoe rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
               Search
             </Button>
           </div>

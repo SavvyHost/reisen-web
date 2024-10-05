@@ -50,7 +50,7 @@ export default function Offer({
           </div>
 
           <div>
-            <span className="line-through text-red-500">{originalPrice}</span>
+            <span className="line-through text-green-500">{originalPrice}</span>
             <span className="ml-2">{discount}</span>
 
             <div className="text-xl font-bold">{price}</div>

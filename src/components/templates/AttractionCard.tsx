@@ -29,7 +29,7 @@ const AttractionCard: React.FC<AttractionCardProps> = ({
 }) => {
   return (
     <Link href={`/top-packages/${id}`}>
-      <div className="group flex transition-all bg-white border border-gray-300 hover:border-red-400 shadow-sm hover:shadow-xl ease-in-out flex-col cursor-pointer overflow-hidden bg-transparent md:max-w-xs max-w-sm sm:mx-2 mx-3 my-2 sm:my-4 lg:my-6">
+      <div className="group flex transition-all bg-white border border-gray-300 hover:border-green-400 shadow-sm hover:shadow-xl ease-in-out flex-col cursor-pointer overflow-hidden bg-transparent md:max-w-xs max-w-sm sm:mx-2 mx-3 my-2 sm:my-4 lg:my-6">
         {/* Image Section */}
         <div className="relative h-48 w-full overflow-hidden">
           <Image
@@ -40,10 +40,10 @@ const AttractionCard: React.FC<AttractionCardProps> = ({
           />
           {/* Badge Section */}
           <div className="absolute top-2 left-2 flex space-x-2">
-            <span className="bg-red-800 text-white text-xs px-2 py-1 rounded-none font-semibold">
-              Featured
+            <span className="bg-green-800 text-white text-xs px-2 py-1 rounded-none font-semibold">
+              Featugreen
             </span>
-            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-none font-semibold">
+            <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-none font-semibold">
               6% OFF
             </span>
           </div>

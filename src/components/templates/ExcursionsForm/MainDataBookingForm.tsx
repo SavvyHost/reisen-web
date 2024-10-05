@@ -92,7 +92,7 @@ const MainDataBookingForm: React.FC<MainDataBookingFormProps> = ({
             <div className="mt-4 relative">
               <Button
                 variant="outlined"
-                className="bg-red-600 text-white border-red-950 hover:bg-red-800 w-full"
+                className="bg-green-600 text-white border-green-950 hover:bg-green-800 w-full"
                 onClick={() => setOpenPassengers(!openPassengers)}
               >
                 {`Adults: ${values.num_of_adults}, Children: ${values.num_of_children}, Infants: ${values.num_of_infants}`}
@@ -139,7 +139,7 @@ const MainDataBookingForm: React.FC<MainDataBookingFormProps> = ({
                     <button
                       onClick={() => setOpenPassengers(false)}
                       type="button"
-                      className="w-full p-3 bg-red-700 text-white rounded-md hover:bg-red-900 transition duration-150"
+                      className="w-full p-3 bg-green-700 text-white rounded-md hover:bg-green-900 transition duration-150"
                     >
                       Apply
                     </button>
@@ -152,7 +152,7 @@ const MainDataBookingForm: React.FC<MainDataBookingFormProps> = ({
               variant="contained"
               color="primary"
               onClick={() => setIsModalOpen(true)}
-              className="mt-4 w-full bg-red-900 hover:bg-red-600"
+              className="mt-4 w-full bg-green-900 hover:bg-green-600"
             >
               Book Now
             </Button>
@@ -208,7 +208,7 @@ const MainDataBookingForm: React.FC<MainDataBookingFormProps> = ({
                   <div className="mt-4 flex justify-end">
                     <Button
                       variant="outlined"
-                      className="border border-red-600 text-red-800 hover:bg-none"
+                      className="border border-green-600 text-green-800 hover:bg-none"
                       onClick={() => setIsModalOpen(false)}
                     >
                       Cancel
@@ -217,7 +217,7 @@ const MainDataBookingForm: React.FC<MainDataBookingFormProps> = ({
                       variant="contained"
                       color="primary"
                       onClick={() => handleConfirmBooking(values)}
-                      className="ml-2 bg-red-900 hover:bg-red-600"
+                      className="ml-2 bg-green-900 hover:bg-green-600"
                     >
                       Confirm
                     </Button>

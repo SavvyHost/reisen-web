@@ -5,10 +5,10 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="font-sans tracking-wide bg-red-700 px-4 py-6 mt-3">
+    <footer className="font-sans tracking-wide bg-green-700 px-4 py-6 mt-3">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
         <div>
-          <div className="text-white">Feliz Tour Egypt</div>
+          <div className="text-white">Egypt Raisen Tours</div>
           <ul className="mt-10 flex space-x-5">
             <li>
               <a href="javascript:void(0)">

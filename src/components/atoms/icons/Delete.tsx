@@ -17,7 +17,7 @@ export const Delete = ({
       <div className="bg-[#F3F6F9] p-1 rounded-md">
         {/* <AiFillDelete
           size={"20"}
-          className={` fill-red-500   cursor-pointer  ${className}`}
+          className={` fill-green-500   cursor-pointer  ${className}`}
           {...props}
         /> */}
         <MdDelete className="text-[18px] text-[#B5B5C3]" />

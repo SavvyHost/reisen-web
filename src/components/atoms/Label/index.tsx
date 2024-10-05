@@ -12,8 +12,8 @@ const label = tv({
       md: "text-md",
       lg: "text-lg",
     },
-    required: {
-      true: 'after:content-["*"] after:text-mainRed after:me-1',
+    requigreen: {
+      true: 'after:content-["*"] after:text-maingreen after:me-1',
     },
   },
   defaultVariants: {
@@ -28,7 +28,7 @@ export interface LabelProps_TP
   children: ReactNode | string;
   htmlFor: string;
   size?: "sm" | "md" | "lg";
-  required?: boolean;
+  requigreen?: boolean;
 }
 
 export const Label = ({
@@ -36,14 +36,14 @@ export const Label = ({
   className,
   children,
   size = "sm",
-  required = false,
+  requigreen = false,
 }: LabelProps_TP) => {
   return (
     <label
       className={label({
         className,
         size,
-        required,
+        requigreen,
       })}
       htmlFor={htmlFor}
     >

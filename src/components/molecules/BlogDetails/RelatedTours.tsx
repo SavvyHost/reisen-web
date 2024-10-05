@@ -33,7 +33,7 @@ const RelatedTours = () => {
                 <div className="absolute top-2 left-2 bg-[#FFF1BA] text-[#232323] text-xs font-segoe font-medium px-2 py-1 rounded">
                   Top Rated
                 </div>
-                <button className="absolute top-2 right-2 text-white hover:text-red-500 transition-colors duration-300 ease-in-out">
+                <button className="absolute top-2 right-2 text-white hover:text-green-500 transition-colors duration-300 ease-in-out">
                   <BsHeart size={24} />
                 </button>
               </div>
@@ -55,12 +55,12 @@ const RelatedTours = () => {
                       {[1, 2, 3, 4].map((_, index) => (
                         <BsFillCircleFill
                           key={index}
-                          className="text-red-500 w-4 h-4 ml-1"
+                          className="text-green-500 w-4 h-4 ml-1"
                         />
                       ))}
                       {excursion.rating % 1 !== 0 && (
                         <div className="w-4 h-4 ml-1 relative">
-                          <div className="absolute top-0 left-0 w-full h-full bg-red-500 rounded-full clip-half"></div>
+                          <div className="absolute top-0 left-0 w-full h-full bg-green-500 rounded-full clip-half"></div>
                         </div>
                       )}
                       <span className="m-2 text-gray-600 text-sm">
@@ -101,7 +101,7 @@ const RelatedTours = () => {
                   <div className="absolute top-2 left-2 bg-[#FFF1BA] text-[#232323] text-xs font-segoe font-medium px-2 py-1 rounded">
                     Top Rated
                   </div>
-                  <button className="absolute top-2 right-2 text-white hover:text-red-500 transition-colors duration-300 ease-in-out">
+                  <button className="absolute top-2 right-2 text-white hover:text-green-500 transition-colors duration-300 ease-in-out">
                     <BsHeart size={24} />
                   </button>
                 </div>
@@ -123,12 +123,12 @@ const RelatedTours = () => {
                         {[1, 2, 3, 4].map((_, index) => (
                           <BsFillCircleFill
                             key={index}
-                            className="text-red-500 w-4 h-4 ml-1"
+                            className="text-green-500 w-4 h-4 ml-1"
                           />
                         ))}
                         {excursion.rating % 1 !== 0 && (
                           <div className="w-4 h-4 ml-1 relative">
-                            <div className="absolute top-0 left-0 w-full h-full bg-red-500 rounded-full clip-half"></div>
+                            <div className="absolute top-0 left-0 w-full h-full bg-green-500 rounded-full clip-half"></div>
                           </div>
                         )}
                         <span className="m-2 text-gray-600 text-sm">

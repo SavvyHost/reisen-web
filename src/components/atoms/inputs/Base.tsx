@@ -8,7 +8,7 @@
 //   base: "!mb-0 rounded-md base-input-style  border-1  border-[#E4E6EF] focus:!border-1 focus:!border-[#E4E6EF] focus:outline-0 focus-shadow-none h-[41px] focus:!shadow-none",
 //   variants: {
 //     error: {
-//       true: "border-mainRed",
+//       true: "border-maingreen",
 //     },
 //     type: {
 //       checkbox:

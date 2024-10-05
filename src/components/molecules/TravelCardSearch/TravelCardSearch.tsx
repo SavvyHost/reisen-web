@@ -45,7 +45,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
       <div className="grid grid-cols-1  lg:grid-cols-1 gap-4 mt-3">
         {currentTours.map((pkg) => (
           <Link href={`/top-packages/${pkg.id}`} key={pkg.id}>
-            <div className="w-full hover:border-red-500 bg-white rounded-md border-gray-300 border overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer">
+            <div className="w-full hover:border-green-500 bg-white rounded-md border-gray-300 border overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer">
               {/* Card layout for mobile */}
               <div className="flex flex-row md:hidden">
                 {/* Image Section */}
@@ -57,11 +57,11 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                     objectFit="cover"
                     className="rounded-l-md"
                   />
-                  <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 text-xs font-segoe rounded-sm shadow-md">
+                  <div className="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs font-segoe rounded-sm shadow-md">
                     20% Off
                   </div>
                   <button className="absolute top-2 right-2 bg-white p-1 rounded-full shadow-md hover:bg-gray-100 transition-colors duration-200 group">
-                    <Heart className="w-4 h-4 text-gray-600 group-hover:text-red-500" />
+                    <Heart className="w-4 h-4 text-gray-600 group-hover:text-green-500" />
                   </button>
                 </div>
 
@@ -97,7 +97,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                       <Button className="bg-black text-white text-xs py-1 px-3 rounded-sm hover:bg-gray-800">
                         View
                       </Button>
-                      <Button className="bg-red-300 text-red-900 text-xs py-1 px-3 rounded-sm hover:bg-red-400 flex items-center">
+                      <Button className="bg-green-300 text-green-900 text-xs py-1 px-3 rounded-sm hover:bg-green-400 flex items-center">
                         <FaWhatsapp className="mr-1" size={12} />
                         Chat
                       </Button>
@@ -117,11 +117,11 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                     objectFit="cover"
                     className="rounded-l-md"
                   />
-                  <div className="absolute top-3 left-3 bg-red-500 text-white px-3 py-1 text-sm font-segoe rounded-sm shadow-md">
+                  <div className="absolute top-3 left-3 bg-green-500 text-white px-3 py-1 text-sm font-segoe rounded-sm shadow-md">
                     Special Offer 20%
                   </div>
                   <button className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors duration-200 group">
-                    <Heart className="w-5 h-5 text-gray-600 group-hover:text-red-500" />
+                    <Heart className="w-5 h-5 text-gray-600 group-hover:text-green-500" />
                   </button>
                 </div>
 
@@ -179,7 +179,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                       <Button className="bg-black text-white text-sm py-2 px-5 rounded-sm hover:bg-gray-800">
                         View Tour
                       </Button>
-                      <Button className="bg-red-300 text-red-900 text-sm py-2 px-5 rounded-sm hover:bg-red-400 flex items-center">
+                      <Button className="bg-green-300 text-green-900 text-sm py-2 px-5 rounded-sm hover:bg-green-400 flex items-center">
                         <FaWhatsapp className="mr-2" size={16} />
                         Chat Now
                       </Button>

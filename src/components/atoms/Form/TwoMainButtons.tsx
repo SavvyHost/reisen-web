@@ -46,7 +46,7 @@ const HeroOverlay: React.FC<Props> = () => {
         {/* Buttons Section */}
         <div className="flex flex-col items-center justify-center space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
           <Link href="/inquire" passHref>
-            <button className="w-48 bg-red-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-red-600 flex items-center justify-center space-x-2">
+            <button className="w-48 bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-green-600 flex items-center justify-center space-x-2">
               <span>Explore Tours</span>
               <BsArrowRight className="text-lg" />
             </button>

@@ -9,7 +9,7 @@ const DefaultDetails = (props: Props) => {
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg cursor-pointer">
         <li className="flex items-start border rounded-sm p-4 shadow hover:shadow-lg transition-shadow duration-30">
           <div>
-            <Tag className="w-6 h-6 mr-3 text-red-600" />
+            <Tag className="w-6 h-6 mr-3 text-green-600" />
           </div>
           <div>
             <p className="font-semibold">Free cancellation</p>

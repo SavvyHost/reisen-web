@@ -7,7 +7,7 @@ const baseInput = tv({
   base: "!mb-0 rounded-md !border  border-1  !border-[#bbbdc8] focus:!border-1 focus:!border-[#bbbdc8] focus:outline-0 focus-shadow-none h-[41px] focus:!shadow-none",
   variants: {
     error: {
-      true: "border-mainRed",
+      true: "border-maingreen",
     },
     type: {
       checkbox:

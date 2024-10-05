@@ -75,14 +75,14 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
             onClick={() => setIsModalOpen(false)}
             className="absolute top-2 right-4"
           >
-            <CloseIcon fontSize="large" className="text-red-600" />
+            <CloseIcon fontSize="large" className="text-green-600" />
           </IconButton>
 
           {/* Filters Header */}
           <div className="flex justify-start gap-x-3 items-center mb-4">
             <h2 className="text-xl font-segoe">Applied filters</h2>
             <Button
-              className="text-red-600 hover:text-red-500 font-segoe"
+              className="text-green-600 hover:text-green-500 font-segoe"
               onClick={handleClearFilters}
             >
               Clear All
@@ -242,7 +242,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
                 handleApplyFilters();
                 setIsModalOpen(false);
               }}
-              className="bg-red-800 p-3 text-white rounded-md w-full"
+              className="bg-green-800 p-3 text-white rounded-md w-full"
             >
               Apply Filters
             </button>

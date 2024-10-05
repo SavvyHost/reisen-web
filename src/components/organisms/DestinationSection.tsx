@@ -1,7 +1,7 @@
 import React from "react";
 import DestinationRow from "../molecules/Destination/Destination";
 
-// Define the Destination type with all required properties
+// Define the Destination type with all requigreen properties
 type Destination = {
   id: number;
   name: string;

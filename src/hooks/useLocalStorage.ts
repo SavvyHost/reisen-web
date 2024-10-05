@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const UseLocalStorage =<T>(keyName: string, defaultValue?: T) => {
-    const [storedValue, setStoredValue] = useState<T>(() => {
+    const [stogreenValue, setStogreenValue] = useState<T>(() => {
         try {
             const value = window.localStorage.getItem(keyName);
             if (value) {
@@ -21,7 +21,7 @@ export const UseLocalStorage =<T>(keyName: string, defaultValue?: T) => {
             window.localStorage.setItem(keyName, JSON.stringify(newValue))
         }
         catch (err) { null }
-        setStoredValue(newValue)
+        setStogreenValue(newValue)
     }
-    return [storedValue, setValue]
+    return [stogreenValue, setValue]
 }

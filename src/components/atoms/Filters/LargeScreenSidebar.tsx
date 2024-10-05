@@ -37,7 +37,7 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-segoe">Applied filters</h2>
         <Button
-          className="text-red-600 hover:text-red-500 font-segoe"
+          className="text-green-600 hover:text-green-500 font-segoe"
           onClick={handleClearFilters}
         >
           Clear All
@@ -57,9 +57,9 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
                 checked={selectedDestination === country}
                 // Prevent div click when clicking on radio
                 sx={{
-                  color: "red",
+                  color: "green",
                   "&.Mui-checked": {
-                    color: "red",
+                    color: "green",
                   },
                 }}
               />
@@ -79,12 +79,12 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
             min={0}
             max={1000}
             sx={{
-              color: "red",
+              color: "green",
               "& .MuiSlider-thumb": {
-                backgroundColor: "red",
+                backgroundColor: "green",
               },
               "& .MuiSlider-rail": {
-                backgroundColor: "red",
+                backgroundColor: "green",
               },
             }}
           />
@@ -115,9 +115,9 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
                   checked={selectedAmenities.includes(rating)}
                   // Prevent div click when clicking on checkbox
                   sx={{
-                    color: "red",
+                    color: "green",
                     "&.Mui-checked": {
-                      color: "red",
+                      color: "green",
                     },
                   }}
                 />
@@ -153,9 +153,9 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
                 checked={selectedAmenities.includes(amenity)}
                 // Prevent div click when clicking on checkbox
                 sx={{
-                  color: "red",
+                  color: "green",
                   "&.Mui-checked": {
-                    color: "red",
+                    color: "green",
                   },
                 }}
               />
@@ -179,9 +179,9 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
                   checked={selectedAccommodationType === type}
                   // Prevent div click when clicking on checkbox
                   sx={{
-                    color: "red",
+                    color: "green",
                     "&.Mui-checked": {
-                      color: "red",
+                      color: "green",
                     },
                   }}
                 />
@@ -195,7 +195,7 @@ const LargeScreenSidebar: React.FC<LargeScreenSidebarProps> = ({
       {/* Apply Filters Button */}
       <div className="mt-4">
         <Button
-          className="bg-red-500 hover:bg-red-900 text-white w-full"
+          className="bg-green-500 hover:bg-green-900 text-white w-full"
           onClick={handleApplyFilters}
         >
           Apply Filters

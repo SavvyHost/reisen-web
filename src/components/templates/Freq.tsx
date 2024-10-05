@@ -17,7 +17,7 @@ const FAQItem: FC<FAQItemProps> = ({ question, answer }) => {
       >
         <div className="mr-2 text-lg text-gray-600 border border-gray-300 my-2 rounded-none py-2 px-4">
           {isOpen ? (
-            <Minus className="text-red-500" />
+            <Minus className="text-green-500" />
           ) : (
             <Plus className="text-green-500" />
           )}

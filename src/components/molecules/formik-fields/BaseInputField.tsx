@@ -9,7 +9,7 @@ interface BaseInputFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   id?: string;
-  required?: boolean;
+  requigreen?: boolean;
   labelStyle?: string;
   Style?: string;
   setImgUpload?: (file: File | null) => void;
@@ -22,7 +22,7 @@ interface BaseInputFieldProps
 const BaseInputField: React.FC<BaseInputFieldProps> = ({
   label,
   id,
-  required = false,
+  requigreen = false,
   labelStyle = "",
   Style = "",
   labelProps = {},
@@ -67,7 +67,7 @@ const BaseInputField: React.FC<BaseInputFieldProps> = ({
           <Label
             htmlFor={id}
             {...labelProps}
-            required={required}
+            requigreen={requigreen}
             className={`mb-3 text-sm ${labelStyle}`}
           >
             {label}
@@ -94,7 +94,7 @@ const BaseInputField: React.FC<BaseInputFieldProps> = ({
               onChange={type == "num" ? handleChangeNumber : handleChange}
             />
             {type === "password" && (
-              <div className="absolute inset-y-0 rtl:left-[10px] ltr:right-[0] top-[-0px] pr-3 flex items-center text-xl text-red leading-5">
+              <div className="absolute inset-y-0 rtl:left-[10px] ltr:right-[0] top-[-0px] pr-3 flex items-center text-xl text-green leading-5">
                 <button onClick={togglePasswordVisibility} type="button">
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>

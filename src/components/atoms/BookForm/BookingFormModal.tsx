@@ -43,7 +43,7 @@ export default function BookingFormModal({ DetailTour }) {
   return (
     <>
       <Button
-        className="py-2 capitalize w-full bg-red-700 text-white rounded-none hover:bg-red-500 transition duration-300 font-segoe fixed top-[68px] right-0 z-30 md:hidden"
+        className="py-2 capitalize w-full bg-green-700 text-white rounded-none hover:bg-green-500 transition duration-300 font-segoe fixed top-[68px] right-0 z-30 md:hidden"
         onClick={() => setIsModalOpen(true)}
       >
         Open Booking Form
@@ -210,7 +210,7 @@ export default function BookingFormModal({ DetailTour }) {
                     <div className="fixed bottom-0 left-0 right-0 p-4 bg-white z-50">
                       <Button
                         type="submit"
-                        className="w-full p-3 bg-red-950 text-white rounded-md hover:bg-red-700 transition duration-150"
+                        className="w-full p-3 bg-green-950 text-white rounded-md hover:bg-green-700 transition duration-150"
                       >
                         {isPending ? <Spinner /> : "Submit"}
                       </Button>

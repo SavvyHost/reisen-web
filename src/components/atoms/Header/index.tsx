@@ -60,7 +60,7 @@ export const Header = ({ header, className }: any) => {
             </Link>
           </div>
 
-          {/* Center - Desktop Menu (links centered only on desktop) */}
+          {/* Center - Desktop Menu (links centegreen only on desktop) */}
           <div className="hidden lg:flex lg:w-2/3 justify-center">
             <DesktopMenu navLinks={navLinks} />
           </div>
@@ -68,9 +68,9 @@ export const Header = ({ header, className }: any) => {
           {/* Right side - Social Icons, Language Change, and Book Tour Button */}
           <div className="flex items-center lg:w-1/3 justify-end space-x-4">
             <div className="hidden sm:flex space-x-2">
-              <Facebook className="w-5 h-5 text-red-700 cursor-pointer" />
-              <Instagram className="w-5 h-5 text-red-700 cursor-pointer" />
-              <Twitter className="w-5 h-5 text-red-700 cursor-pointer" />
+              <Facebook className="w-5 h-5 text-green-700 cursor-pointer" />
+              <Instagram className="w-5 h-5 text-green-700 cursor-pointer" />
+              <Twitter className="w-5 h-5 text-green-700 cursor-pointer" />
             </div>
             <button
               className="hidden lg:block focus:outline-none"
@@ -79,9 +79,12 @@ export const Header = ({ header, className }: any) => {
             >
               <Globe className="w-6 h-6 text-[#132f4e]" />
             </button>
-            <button className="bg-red-700 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-red-600">
-              Book Tour Now
-            </button>
+            <Link
+              href="/inquire"
+              className="bg-green-700 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-green-600"
+            >
+              Tailor-made
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle (visible on small screens) */}

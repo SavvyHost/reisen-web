@@ -11,7 +11,7 @@ const PriceItem: FC<PriceItemProps> = ({ title, description, price }) => (
   <div className="flex justify-between items-center border-b py-4 hover:bg-gray-50 cursor-pointer">
     <div className="">
       <div className="flex  gap-2 ">
-        <Plane className="text-red-700" />
+        <Plane className="text-green-700" />
         <h4 className="text-lg font-semibold">{title}</h4>
       </div>
       <p className="text-sm text-gray-600">{description}</p>

@@ -4,7 +4,10 @@ type TabsIconPops_TP = {
   color?: string
   cStyle?: string
 }
-export const TabsIcon = ({ color = "fill-mainred", cStyle }: TabsIconPops_TP) => (
+export const TabsIcon = ({
+  color = "fill-maingreen",
+  cStyle,
+}: TabsIconPops_TP) => (
   <svg
     width="18"
     height="18"

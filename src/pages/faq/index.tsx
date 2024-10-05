@@ -79,7 +79,7 @@ const faqData: FaqSection[] = [
       },
       {
         question: "What are the accepted payment methods?",
-        answer: "We accept credit cards, debit cards, and PayPal...",
+        answer: "We accept cgreenit cards, debit cards, and PayPal...",
       },
       {
         question: "How do I view my payment history?",

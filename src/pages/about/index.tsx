@@ -44,7 +44,7 @@ const About = ({ data }) => {
                 height={100}
                 className="block"
                 src="https://i.ibb.co/FYTKDG6/Rectangle-118-2.png"
-                alt="Alexa featured Image"
+                alt="Alexa featugreen Image"
               />
 
               <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
@@ -57,7 +57,7 @@ const About = ({ data }) => {
                 height={100}
                 className="block"
                 src="https://i.ibb.co/fGmxhVy/Rectangle-119.png"
-                alt="Olivia featured Image"
+                alt="Olivia featugreen Image"
               />
 
               <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
@@ -83,7 +83,7 @@ const About = ({ data }) => {
                 height={100}
                 className="block "
                 src="https://i.ibb.co/7nSJPXQ/Rectangle-121.png"
-                alt="Elijah featured Image"
+                alt="Elijah featugreen Image"
               />
 
               <p className="font-medium text-xl leading-5 text-gray-800 mt-4">

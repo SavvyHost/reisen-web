@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 // Mapping of itinerary indexes to icons
 const iconMap = {
-  0: <Heart className="text-red-500 w-6 h-6" />,
+  0: <Heart className="text-green-500 w-6 h-6" />,
   1: <Sun className="text-yellow-500 w-6 h-6" />,
   2: <Mountain className="text-green-500 w-6 h-6" />,
   3: <Star className="text-blue-500 w-6 h-6" />,
@@ -29,7 +29,7 @@ const TourCard = ({ itinerary, index, isLast }) => {
 
       {/* Content moved to the right */}
       <div className="lg:ml-2 ml-1 w-full">
-        <div className="lg:px-6 px-4 py-2 border-l-2 border-red-500">
+        <div className="lg:px-6 px-4 py-2 border-l-2 border-green-500">
           <div
             className="flex justify-between items-center font-semibold text-base lg:text-xl mb-2 cursor-pointer"
             onClick={toggleCollapse}
