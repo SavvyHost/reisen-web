@@ -1,11 +1,11 @@
-import First from "../public/assets/5-TOP-10-amazing-places-to-visit-in-Egypt-jintravel.com 1.png"
-import Second from "../public/assets/camels.jpeg";
-import Third from "../public/assets/bgblogs.png";
+import First from "../public/assets/firstImage.jpeg"
+import Second from "../public/assets/Secondimage.jpeg";
+import Third from "../public/assets/roud.jpeg";
 import Egy from "../public/assets/firstImage.jpeg";
 import ImageCard from "../public/assets/Secondimage.jpeg";
 import Try from "../public/assets/Secondimage.jpeg";
 import Roude from "../public/assets/roud.jpeg";
-import Exp from "../public/assets/firstImage.jpeg";
+import Exp from "../public/assets/5-TOP-10-amazing-places-to-visit-in-Egypt-jintravel.com 1.png";
 import blogBg from "../public/assets/bgblogs.png";
 export const blogData = [
 
@@ -30,10 +30,10 @@ export const blogData = [
     },
     {
       id: 3,
-      title: "Trends and Pgreenictions",
+      title: "Trends and Predictions",
       date: "5 OCT 2023",
       author: "SIMON KONECKI",
-      imageUrl: "https://readymadeui.com/pgreeniction.webp",
+      imageUrl: "https://readymadeui.com/prediction.webp",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, nunc et tempus blandit, metus mi consectetur felis turpis vitae ligula.",
     },
@@ -59,6 +59,18 @@ export const cardData = [
     hoverText: "Uncover Secrets",
   },
   {
+    id: 4,
+    image: Third,
+    title: "Explore",
+    hoverText: "Uncover Secrets",
+  },
+  {
+    id: 5,
+    image: Third,
+    title: "Explore",
+    hoverText: "Uncover Secrets",
+  },
+  {
     id: 1,
     image: First,
     title: "Solo",
@@ -76,7 +88,18 @@ export const cardData = [
     title: "Explore",
     hoverText: "Uncover Secrets",
   },
-
+  {
+    id: 4,
+    image: Third,
+    title: "Explore",
+    hoverText: "Uncover Secrets",
+  },
+  {
+    id: 5,
+    image: Third,
+    title: "Explore",
+    hoverText: "Uncover Secrets",
+  },
   // Add more cards as needed
 ];
 
@@ -458,12 +481,12 @@ export const faqs = [
   {
     question: "How does the billing work?",
     answer:
-      "Springerdata offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a cgreenit card or other secure online payment method.",
+      "Springerdata offers a variety of billing options, including monthly and annual subscription plans, as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit card or other secure online payment method.",
   },
   {
     question: "Can I get a refund for my subscription?",
     answer:
-      "We offer a 30-day money-back guarantee for most of its subscription plans. If you are not satisfied with your subscription within the first 30 days, you can request a full refund. Refunds for subscriptions that have been active for longer than 30 days may be considegreen on a case-by-case basis.",
+      "We offer a 30-day money-back guarantee for most of its subscription plans. If you are not satisfied with your subscription within the first 30 days, you can request a full refund. Refunds for subscriptions that have been active for longer than 30 days may be considered on a case-by-case basis.",
   },
   {
     question: "How do I cancel my subscription?",
@@ -614,42 +637,42 @@ export const excursions = [
     {
       id: 1,
       imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      recommendation: "Category",
     },
     {
       id: 2,
-      imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      imageSrc: First,
+      recommendation: "Category",
     },
     {
       id: 3,
-      imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      imageSrc: Third,
+      recommendation: "Category",
     },
     {
       id: 4,
-      imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      imageSrc: Second,
+      recommendation: "Category",
     },
     {
-      id: 1,
+      id: 5,
       imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      recommendation: "Category",
     },
     {
-      id: 2,
-      imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      id: 6,
+      imageSrc: Second,
+      recommendation: "Category",
     },
     {
-      id: 3,
-      imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      id: 7,
+      imageSrc: First,
+      recommendation: "Category",
     },
     {
-      id: 4,
-      imageSrc: Exp,
-      recommendation: "Travelers recommend",
+      id: 8,
+      imageSrc: Third,
+      recommendation: "Category",
     },
 
 ];
