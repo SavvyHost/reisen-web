@@ -8,7 +8,7 @@ const Footer = (props: Props) => {
   return (
     <footer className="bg-gray-800  px-8 font-[sans-serif] tracking-wide mt-16">
       <div className="relative">
-        <div className="bg-blue-600 rounded-md flex items-center justify-between sm:px-12 max-sm:px-4 py-4 absolute top-[-66px] w-full">
+        <div className="bg-blue-600 lg:block hidden rounded-md flex items-center justify-between sm:px-12 max-sm:px-4 py-4 absolute top-[-66px] w-full">
           <div className="text-white text-lg font-semibold">
             Looking for help?
           </div>
