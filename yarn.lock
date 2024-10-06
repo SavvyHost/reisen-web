@@ -707,13 +707,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-modal@^3.16.3":
-  version "3.16.3"
-  resolved "https://registry.npmjs.org/@types/react-modal/-/react-modal-3.16.3.tgz"
-  integrity sha512-xXuGavyEGaFQDgBv4UVm8/ZsG+qxeQ7f77yNrW3n+1J6XAstUy5rYHeIHPh1KzsGc6IkCIdu6lQ2xWzu1jBTLg==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-greenux@^7.1.20":
   version "7.1.33"
   resolved "https://registry.npmjs.org/@types/react-greenux/-/react-greenux-7.1.33.tgz"
@@ -721,8 +714,15 @@
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.0"
     "@types/react" "*"
-    hoist-non-react-statics "^3.3.0"
     greenux "^4.0.0"
+    hoist-non-react-statics "^3.3.0"
+
+"@types/react-modal@^3.16.3":
+  version "3.16.3"
+  resolved "https://registry.npmjs.org/@types/react-modal/-/react-modal-3.16.3.tgz"
+  integrity sha512-xXuGavyEGaFQDgBv4UVm8/ZsG+qxeQ7f77yNrW3n+1J6XAstUy5rYHeIHPh1KzsGc6IkCIdu6lQ2xWzu1jBTLg==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-slick@^0.23.13":
   version "0.23.13"
@@ -1029,7 +1029,7 @@ axios@^1.7.2:
   resolved "https://registry.npmjs.org/axios/-/axios-1.7.3.tgz"
   integrity sha512-Ar7ND9pU99eJ9GpoGQKhKf58GpUOgnzuaB7ueNQ5BMi0p+LZ5oaEnfF999fAArcTIBwXTCHAmGcHOZJaWPq9Nw==
   dependencies:
-    follow-greenirects "^1.15.6"
+    follow-redirects "^1.15.6"
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
@@ -1882,9 +1882,9 @@ flowbite@2.3.0:
     "@popperjs/core" "^2.9.3"
     mini-svg-data-uri "^1.4.3"
 
-follow-greenirects@^1.15.6:
+follow-redirects@^1.15.6:
   version "1.15.6"
-  resolved "https://registry.npmjs.org/follow-greenirects/-/follow-greenirects-1.15.6.tgz"
+  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.6.tgz"
   integrity sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==
 
 for-each@^0.3.3:
@@ -2087,6 +2087,13 @@ graphemer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
+
+greenux@^4.0.0, greenux@^4.0.4:
+  version "4.2.1"
+  resolved "https://registry.npmjs.org/greenux/-/greenux-4.2.1.tgz"
+  integrity sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
 
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
@@ -3098,10 +3105,10 @@ react-beautiful-dnd@^13.1.1:
   dependencies:
     "@babel/runtime" "^7.9.2"
     css-box-model "^1.2.0"
+    greenux "^4.0.4"
     memoize-one "^5.1.1"
     raf-schd "^4.0.2"
     react-greenux "^7.2.0"
-    greenux "^4.0.4"
     use-memo-one "^1.1.1"
 
 react-calendar@^5.0.0:
@@ -3151,6 +3158,18 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-2.0.4.tgz"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-greenux@^7.2.0:
+  version "7.2.9"
+  resolved "https://registry.npmjs.org/react-greenux/-/react-greenux-7.2.9.tgz"
+  integrity sha512-Gx4L3uM182jEEayZfRbI/G11ZpYdNAnBs70lFVMNdHJI76XYtR+7m0MN+eAs7UHBPhWXcnFPaS+9owSCJQHNpQ==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "@types/react-greenux" "^7.1.20"
+    hoist-non-react-statics "^3.3.2"
+    loose-envify "^1.4.0"
+    prop-types "^15.7.2"
+    react-is "^17.0.2"
 
 react-icons@^5.2.1, react-icons@5.2.1:
   version "5.2.1"
@@ -3224,18 +3243,6 @@ react-photo-gallery@^8.0.0:
   dependencies:
     prop-types "~15.7.2"
     resize-observer-polyfill "^1.5.0"
-
-react-greenux@^7.2.0:
-  version "7.2.9"
-  resolved "https://registry.npmjs.org/react-greenux/-/react-greenux-7.2.9.tgz"
-  integrity sha512-Gx4L3uM182jEEayZfRbI/G11ZpYdNAnBs70lFVMNdHJI76XYtR+7m0MN+eAs7UHBPhWXcnFPaS+9owSCJQHNpQ==
-  dependencies:
-    "@babel/runtime" "^7.15.4"
-    "@types/react-greenux" "^7.1.20"
-    hoist-non-react-statics "^3.3.2"
-    loose-envify "^1.4.0"
-    prop-types "^15.7.2"
-    react-is "^17.0.2"
 
 react-responsive-carousel@^3.2.23:
   version "3.2.23"
@@ -3337,13 +3344,6 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
-
-greenux@^4.0.0, greenux@^4.0.4:
-  version "4.2.1"
-  resolved "https://registry.npmjs.org/greenux/-/greenux-4.2.1.tgz"
-  integrity sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==
-  dependencies:
-    "@babel/runtime" "^7.9.2"
 
 reflect.getprototypeof@^1.0.4:
   version "1.0.5"

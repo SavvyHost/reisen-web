@@ -8,8 +8,8 @@ const Footer = (props: Props) => {
   return (
     <footer className="bg-gray-800  px-8 font-[sans-serif] tracking-wide mt-16">
       <div className="relative">
-        <div className="bg-blue-600 lg:block hidden rounded-md flex items-center justify-between sm:px-12 max-sm:px-4 py-4 absolute top-[-66px] w-full">
-          <div className="text-white text-lg font-semibold">
+        <div className="bg-blue-600 rounded-md flex flex-col sm:flex-row items-center justify-between sm:px-12 px-4 py-4 absolute top-[-66px] w-full">
+          <div className="text-white text-lg font-semibold mb-2 sm:mb-0">
             Looking for help?
           </div>
           <div className="flex items-center gap-4 flex-wrap">
@@ -52,6 +52,7 @@ const Footer = (props: Props) => {
             </button>
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 pt-10">
           <div className="text-white">Egypt Rasain Tours Logo</div>
           <div>
