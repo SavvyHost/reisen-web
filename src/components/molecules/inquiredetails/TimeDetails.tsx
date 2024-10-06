@@ -70,7 +70,7 @@ const TimeDetails: React.FC<CityDetailsProps> = ({ formData, onChange }) => {
   ];
 
   return (
-    <div className="pt-4 lg:px-40">
+    <div className="pt-4 mb-3 lg:px-40">
       <Typography
         variant="h4"
         gutterBottom

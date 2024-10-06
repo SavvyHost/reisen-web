@@ -61,7 +61,7 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
       >
         {({ setFieldValue, values }) => (
           <Form>
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 gap-4 mb-4">
               <Dropdown
                 items={[]}
                 selectedItem={DetailTour?.destination}
@@ -69,13 +69,6 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
                 placeholder="Where"
                 isDropdownOpen={false}
                 setIsDropdownOpen={() => {}}
-              />
-
-              <BaseInputField
-                name="name"
-                placeholder="Name"
-                type="text"
-                className="block w-full border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
               />
             </div>
 
@@ -86,20 +79,18 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
                 type="email"
                 className="block w-full border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
               />
-
+              <BaseInputField
+                name="name"
+                placeholder="Name"
+                type="text"
+                className="block w-full border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4 mb-4">
               <SelectNationality
                 name="nationality_id"
                 placeholder="Nationality"
               />
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              {/* Month Selection */}
-              <div className="flex flex-col space-y-2">
-                <SelectMonth name="month" placeholder="Select Month" />
-              </div>
-
-              {/* Phone Input */}
               <div className="flex flex-col space-y-2">
                 <PhoneInput
                   placeholder="Enter Your Number"
@@ -111,18 +102,31 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
               </div>
             </div>
 
-            <div className="mb-4">
-              <button
-                type="button"
-                onClick={() => setIsDatePickerOpen(true)}
-                className="block w-full pl-3 text-gray-400 pr-3 py-2 text-left border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
-              >
-                {selectedDate
-                  ? `${selectedDate.format("YYYY-MM-DD")} to ${selectedDate
-                      .add(rangeDays - 1, "day")
-                      .format("YYYY-MM-DD")}`
-                  : "Select a date range"}
-              </button>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              {/* Month Selection */}
+              <div className="flex flex-col space-y-2">
+                <SelectMonth name="month" placeholder="Select Month" />
+              </div>
+
+              <div className="mt-2">
+                <button
+                  type="button"
+                  onClick={() => setIsDatePickerOpen(true)}
+                  className="block w-full pl-3 pr-3 py-[6px] justify-center items-center text-gray-400 text-center border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
+                >
+                  {selectedDate ? (
+                    <span className="block text-gray-700">
+                      {`${selectedDate.format("YYYY-MM-DD")} to ${selectedDate
+                        .add(rangeDays - 1, "day")
+                        .format("YYYY-MM-DD")}`}
+                    </span>
+                  ) : (
+                    <span className="block text-gray-500">
+                      Select a date range
+                    </span>
+                  )}
+                </button>
+              </div>
             </div>
 
             <DatePickerModal

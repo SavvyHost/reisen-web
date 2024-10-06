@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Globe, Menu } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Globe,
+  Menu,
+  Heart,
+  User,
+} from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 
@@ -52,43 +60,47 @@ export const Header = ({ header, className }: any) => {
           isDesktop && !visible ? "-translate-y-full" : "translate-y-0"
         }`}
       >
-        <div className="flex items-center justify-between py-4">
-          {/* Logo aligned to the left */}
-          <div className="flex-shrink-0 lg:w-2/12">
+        <div className="container mx-auto px-4 lg:py-4 py-5  flex items-center justify-between">
+          {/* Logo - Left side */}
+          <div className="flex-shrink-0">
             <Link href="/">
-              <span className="text-xl font-bold">Egypt Rasain Tour</span>
+              <span className="text-xl font-bold text-green-500">
+                Egypt Rasain Tours
+              </span>
             </Link>
           </div>
 
-          {/* Center - Desktop Menu (links centegreen only on desktop) */}
-          <div className="hidden lg:flex lg:w-2/3 justify-center">
+          {/* Center - Desktop Menu */}
+          <div className="hidden lg:flex justify-center flex-grow">
             <DesktopMenu navLinks={navLinks} />
           </div>
 
-          {/* Right side - Social Icons, Language Change, and Book Tour Button */}
-          <div className="flex items-center lg:w-1/3 justify-end space-x-4">
+          {/* Right side items */}
+          <div className="flex items-center space-x-4">
             <button
               className="hidden lg:block focus:outline-none"
               onClick={handleLanguageChange}
               title="Change Language"
             >
-              <Globe className="w-6 h-6 text-[#132f4e]" />
+              <Globe className="w-5 h-5 text-gray-600" />
             </button>
-            <Link
-              href="/inquire"
-              className="bg-green-700 text-white px-3 lg:px-7 py-2 rounded-md text-base font-semibold hover:bg-green-600"
+            <span className="text-gray-600">EN</span>
+            <button className="text-gray-600 hover:text-gray-900">
+              <Heart className="w-5 h-5" />
+            </button>
+            <button className="text-gray-600 hover:text-gray-900">
+              <User className="w-5 h-5" />
+            </button>
+            <button className=" lg:block hidden text-black border border-gray-400 px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-200">
+              Book Tour Now
+            </button>
+            <button
+              className="lg:hidden text-gray-600 hover:text-gray-900"
+              onClick={() => setIsMenuOpen(true)}
             >
-              Tailor-made
-            </Link>
+              <Menu className="w-6 h-6" />
+            </button>
           </div>
-
-          {/* Mobile Menu Toggle (visible on small screens) */}
-          <button
-            className="lg:hidden text-[#191e61] focus:outline-none"
-            onClick={() => setIsMenuOpen(true)}
-          >
-            <Menu className="w-6 h-6" />
-          </button>
         </div>
       </header>
 

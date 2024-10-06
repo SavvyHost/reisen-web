@@ -67,6 +67,7 @@ const TravelStepper: React.FC = () => {
           </Step>
         ))}
       </Stepper>
+
       <div className="mt-8">
         {isDone ? (
           <div className="text-center text-2xl font-bold">Done!</div>
@@ -74,7 +75,9 @@ const TravelStepper: React.FC = () => {
           getStepContent(activeStep)
         )}
       </div>
-      <div className="mt-4 lg:px-96 flex justify-between">
+
+      {/* Sticky footer buttons inside the container */}
+      <div className="sticky bottom-0 left-0 w-full bg-gray-100 shadow-lg flex justify-between p-4">
         <Button disabled={activeStep === 0 || isDone} onClick={handleBack}>
           Back
         </Button>
