@@ -19,7 +19,7 @@ const CitySelection: React.FC<CitySelectionProps> = ({
   formData,
   onChange,
 }) => {
-  const [hovegreenCity, setHovegreenCity] = useState<string | null>(null);
+  const [hoveredCity, setHoveredCity] = useState<string | null>(null);
 
   const cities: City[] = [
     {
@@ -82,8 +82,8 @@ const CitySelection: React.FC<CitySelectionProps> = ({
             }`}
             whileHover={{ scale: 1.05 }}
             onClick={() => handleCitySelect(city.name)}
-            onMouseEnter={() => setHovegreenCity(city.name)}
-            onMouseLeave={() => setHovegreenCity(null)}
+            onMouseEnter={() => setHoveredCity(city.name)}
+            onMouseLeave={() => setHoveredCity(null)}
           >
             <div className="relative h-64">
               <Image
@@ -104,11 +104,11 @@ const CitySelection: React.FC<CitySelectionProps> = ({
               initial={{ opacity: 0, scale: 0 }}
               animate={{
                 opacity:
-                  hovegreenCity === city.name || isCitySelected(city.name)
+                  hoveredCity === city.name || isCitySelected(city.name)
                     ? 1
                     : 0,
                 scale:
-                  hovegreenCity === city.name || isCitySelected(city.name)
+                  hoveredCity === city.name || isCitySelected(city.name)
                     ? 1
                     : 0,
               }}

@@ -21,7 +21,7 @@ export const FormikError = ({
   return (withTouched ? !!error && isTouched : !!error)
     ? createElement(
         as,
-        { className: twMerge(className, "text-maingreen text-[12px]") },
+        { className: twMerge(className, "text-mainred text-[12px]") },
         error?.toString()
       )
     : null;

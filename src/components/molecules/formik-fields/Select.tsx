@@ -23,7 +23,7 @@ type Select_TP = {
   modalTitle?: string;
   id: string;
   isMulti?: boolean;
-  requigreen?: boolean;
+  required?: boolean;
   placeholder?: string;
   loadingPlaceholder?: string;
   options: SelectOption_TP[] | undefined;
@@ -65,7 +65,7 @@ export const selectTheme = (theme: Theme) => ({
 export const selectClassNames = (touched: boolean, error: boolean) => ({
   control: ({ menuIsOpen }: { menuIsOpen: boolean }) =>
     `border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 ${
-      touched && error ? " !border-maingreen" : ""
+      touched && error ? " !border-mainred" : ""
     } ${menuIsOpen && "!border-[rgba(0, 29, 110, 0.4)]"}`,
   dropdownIndicator: () => `!text-main`,
   valueContainer: () => `!overflow-x-auto !overflow-y-hidden scrollbar`,
@@ -76,7 +76,7 @@ export const SelectComp = ({
   name,
   id,
   isMulti,
-  requigreen,
+  required,
   placeholder,
   loadingPlaceholder,
   options,
@@ -111,7 +111,7 @@ export const SelectComp = ({
     defaultValue,
     name,
     isMulti,
-    requigreen,
+    required,
     placeholder: loading ? loadingPlaceholder : placeholder,
     options,
     isClearable,
@@ -145,11 +145,7 @@ export const SelectComp = ({
       <div className="col-span-1">
         <div className="flex flex-col gap-1">
           {label && (
-            <Label
-              htmlFor={id}
-              className="mb-3 text-sm"
-              requigreen={requigreen}
-            >
+            <Label htmlFor={id} className="mb-3 text-sm" required={required}>
               {label}
             </Label>
           )}

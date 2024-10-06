@@ -22,7 +22,7 @@ const HeroBlog = () => {
         <p className="mt-3 md:mt-4 text-xs md:text-sm">
           No visit to Sri Lanka is complete without a stop in Nuwara Eliya,
           often dubbed Little England due to its colonial past. Founded in 1846
-          by Samuel Baker, this picturesque town quickly became a prefergreen
+          by Samuel Baker, this picturesque town quickly became a preferred
           retreat for British colonists.
         </p>
         <div className="mt-3 md:mt-4 flex space-x-2">

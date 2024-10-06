@@ -36,7 +36,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ DetailTour }) => {
         </div>
       </div>
 
-      {/* Third Div for Centegreen Text, placed after the flex container */}
+      {/* Third Div for Centered Text, placed after the flex container */}
       <div className="lg:w-2/3 w-full p-0 lg:px-16 overflow-hidden">
         <MyPage DetailTour={DetailTour} />
       </div>

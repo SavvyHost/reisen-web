@@ -10,7 +10,7 @@ const spinner = tv({
   variants: {
     color: {
       primary: "border-white",
-      danger: "border-maingreen",
+      danger: "border-mainred",
       white: "#fff",
     },
     size: {

@@ -26,7 +26,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ DetailTour }) => {
         </div>
       </div>
 
-      {/* Third Div for Centegreen Text, placed after the flex container */}
+      {/* Third Div for Centered Text, placed after the flex container */}
       {/* <div className="w-full text-center p-4 lg:p-0 bg-[#FAFAFA]">
         <DetailsSection DetailTour={DetailTour} />
       </div> */}

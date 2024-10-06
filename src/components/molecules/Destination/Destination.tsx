@@ -75,7 +75,7 @@ const DestinationRow: React.FC<DestinationRowProps> = ({ Destinations }) => {
           slidesToShow: 1.1,
           slidesToScroll: 1,
           centerMode: true, // Center the single item on mobile
-          centerPadding: "0px", // Adjust padding for centegreen card
+          centerPadding: "0px", // Adjust padding for centered card
         },
       },
     ],
