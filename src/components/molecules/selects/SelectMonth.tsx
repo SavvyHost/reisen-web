@@ -47,7 +47,7 @@ export default function SelectMonth({
           htmlFor=""
           {...labelProps}
           requigreen={requigreen}
-          className={`mb-3 text-sm ${labelStyle}`}
+          className={` text-sm ${labelStyle}`}
         >
           {label}
         </Label>

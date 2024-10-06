@@ -3,13 +3,12 @@ import BaseInputField from "@/components/molecules/formik-fields/BaseInputField"
 import SelectMonth from "@/components/molecules/selects/SelectMonth";
 import SelectNationality from "@/components/molecules/selects/SelectNationality";
 import { Form, Formik } from "formik";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, User, Mail, Globe, Calendar, Phone } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 import Dropdown from "./Dropdown";
 import { useMutate } from "@/hooks/UseMutate";
-import DatePickerModal from "@/components/molecules/dataPicker"; // Adjust the path accordingly
-import { Input } from "@mui/material"; // Import Input component
-import dayjs, { Dayjs } from "dayjs"; // Make sure to import Dayjs correctly
+import DatePickerModal from "@/components/molecules/dataPicker";
+import dayjs from "dayjs";
 import { Spinner } from "../UI/Spinner";
 import { notify } from "@/utils/toast";
 
@@ -23,19 +22,20 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
     onError: (err) => {
       notify("error", err?.response?.data?.message);
     },
-    formData: true,
+    fornoneata: true,
   });
 
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(null); // Ensure this is initialized as null or Dayjs
+  const [selectedDate, setSelectedDate] = useState(null);
   const [rangeDays, setRangeDays] = useState(1);
 
-  const handleDateChange = (date: Dayjs | null, days: number) => {
+  const handleDateChange = (date, days) => {
     setSelectedDate(date ? dayjs(date) : null);
     setRangeDays(days);
   };
+
   return (
-    <div>
+    <div className="bg-white shadow-md rounded-none p-4 border border-gray-300">
       <Formik
         initialValues={{
           name: "",
@@ -61,56 +61,70 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
       >
         {({ setFieldValue, values }) => (
           <Form>
-            <Dropdown
-              items={[]}
-              selectedItem={DetailTour?.destination}
-              onSelect={() => {}}
-              placeholder="Where"
-              isDropdownOpen={false}
-              setIsDropdownOpen={() => {}}
-            />
-            <div className="mb-2">
-              <BaseInputField name="name" placeholder="Name" type="text" />
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <Dropdown
+                items={[]}
+                selectedItem={DetailTour?.destination}
+                onSelect={() => {}}
+                placeholder="Where"
+                isDropdownOpen={false}
+                setIsDropdownOpen={() => {}}
+              />
+
+              <BaseInputField
+                name="name"
+                placeholder="Name"
+                type="text"
+                className="block w-full border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
+              />
             </div>
-            <div className="mb-2">
-              <BaseInputField name="email" placeholder="Email" type="email" />
-            </div>
-            <div className="my-2">
+
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <BaseInputField
+                name="email"
+                placeholder="Email"
+                type="email"
+                className="block w-full border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
+              />
+
               <SelectNationality
                 name="nationality_id"
-                placeholder="Select Nationality"
+                placeholder="Nationality"
               />
             </div>
-            <SelectMonth name="month" placeholder="Select Month" />
 
-            <div className="relative flex items-center mt-2">
-              <PhoneInput
-                placeholder="Enter Your Number"
-                value={values.phone}
-                onChange={(value) => setFieldValue("phone", value)}
-                defaultCountry="EG"
-                className="w-full p-3 border border-gray-300 rounded-md"
-              />
-            </div>
-            <div className="my-2">
-              <div className="relative">
-                <Input
-                  type="text"
-                  placeholder="Start Date"
-                  value={
-                    selectedDate
-                      ? `${selectedDate.format("YYYY-MM-DD")} to ${selectedDate
-                          .add(rangeDays - 1, "day")
-                          .format("YYYY-MM-DD")}`
-                      : "Select a date range"
-                  }
-                  onClick={() => setIsDatePickerOpen(true)}
-                  className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              {/* Month Selection */}
+              <div className="flex flex-col space-y-2">
+                <SelectMonth name="month" placeholder="Select Month" />
+              </div>
+
+              {/* Phone Input */}
+              <div className="flex flex-col space-y-2">
+                <PhoneInput
+                  placeholder="Enter Your Number"
+                  value={values.phone}
+                  onChange={(value) => setFieldValue("phone", value)}
+                  defaultCountry="EG"
+                  className="block w-full my-3 mt-2 pb-2 p-1 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
                 />
               </div>
             </div>
 
-            {/* DatePickerModal Integration */}
+            <div className="mb-4">
+              <button
+                type="button"
+                onClick={() => setIsDatePickerOpen(true)}
+                className="block w-full pl-3 text-gray-400 pr-3 py-2 text-left border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
+              >
+                {selectedDate
+                  ? `${selectedDate.format("YYYY-MM-DD")} to ${selectedDate
+                      .add(rangeDays - 1, "day")
+                      .format("YYYY-MM-DD")}`
+                  : "Select a date range"}
+              </button>
+            </div>
+
             <DatePickerModal
               open={isDatePickerOpen}
               onClose={() => setIsDatePickerOpen(false)}
@@ -118,29 +132,33 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
               setFieldValue={setFieldValue}
             />
 
-            <div className="space-y-4 mt-3 mb-2">
+            <div className="grid grid-cols-3 gap-4 mb-4">
               {[
                 { label: "Adults", name: "num_of_adults" },
                 { label: "Children", name: "num_of_children" },
                 { label: "Infants", name: "num_of_infants" },
               ].map(({ label, name }) => (
-                <div key={label} className="flex justify-between items-center">
-                  <span className="text-gray-700">{`Number of ${label}`}</span>
-                  <div className="flex items-center space-x-2">
+                <div key={label} className="flex flex-col">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    {label}
+                  </label>
+                  <div className="flex items-center justify-between border border-gray-300 rounded-none shadow-sm">
                     <button
                       type="button"
                       onClick={() =>
                         setFieldValue(name, Math.max(0, values[name] - 1))
                       }
-                      className="p-2 border border-gray-300 rounded-md hover:bg-gray-100 active:bg-gray-200 transition duration-150"
+                      className="p-2 hover:bg-gray-100 active:bg-gray-200 transition duration-150"
                     >
                       <Minus size={16} />
                     </button>
-                    <span>{values[name]}</span>
+                    <span className="text-center min-w-[2rem]">
+                      {values[name]}
+                    </span>
                     <button
                       type="button"
                       onClick={() => setFieldValue(name, values[name] + 1)}
-                      className="p-2 border border-gray-300 rounded-md hover:bg-gray-100 active:bg-gray-200 transition duration-150"
+                      className="p-2 hover:bg-gray-100 active:bg-gray-200 transition duration-150"
                     >
                       <Plus size={16} />
                     </button>
@@ -149,17 +167,21 @@ function MainDataBookingForm({ DetailTour, setIsThanksVisible }) {
               ))}
             </div>
 
-            {/* Additional Details */}
-            <textarea
-              placeholder="Tell us More Details"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-              rows={4}
-            ></textarea>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Additional Details
+              </label>
+              <textarea
+                placeholder="Tell us More Details"
+                className="w-full p-3 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
+                rows={4}
+              ></textarea>
+            </div>
 
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full p-3 bg-green-600 text-white rounded-md hover:bg-green-800 transition duration-150"
+                className="w-full p-3 bg-green-600 text-white rounded-none hover:bg-green-700 transition duration-150"
               >
                 {isPending ? <Spinner /> : "Submit"}
               </button>

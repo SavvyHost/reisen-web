@@ -66,15 +66,21 @@ const AttractionCard: React.FC<AttractionCardProps> = ({
           >
             {title}
           </h3>
-
           {/* Price Section */}
-          <div className="flex items-center text-gray-600 text-sm mb-2">
-            <span className="line-through mr-2">${price + 150}</span>
-            <span className="font-bold text-lg text-black">${price}</span>
+          <div className="flex items-center text-gray-600 text-sm ">
+            <span className="line-through mr-2 font-bold text-lg ">
+              {" "}
+              From ${price + 150}
+            </span>
           </div>
-
+          <div className="flex items-center text-gray-600 text-sm ">
+            <span className="font-bold text-lg text-green-900">
+              {" "}
+              From ${price}
+            </span>
+          </div>{" "}
           {/* Duration and Age Range */}
-          <div className="flex items-center text-gray-600 text-sm mb-2">
+          <div className="flex items-center text-gray-950 text-sm">
             <span>{duration} Days</span>
           </div>
         </div>

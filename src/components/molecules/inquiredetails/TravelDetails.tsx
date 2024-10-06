@@ -57,7 +57,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
   });
 
   return (
-    <div className="font-sans w-full mx-auto bg-white  rounded-xl overflow-hidden my-12 p-8">
+    <div className="font-sans w-full mx-auto lg:px-40 bg-white  rounded-xl overflow-hidden my-12 p-8">
       <h2 className="text-3xl text-green-600 text-center mb-8 font-semibold">
         Tell Us About Your Travel Plans
       </h2>

@@ -74,7 +74,7 @@ const TravelStepper: React.FC = () => {
           getStepContent(activeStep)
         )}
       </div>
-      <div className="mt-4 flex justify-between">
+      <div className="mt-4 lg:px-96 flex justify-between">
         <Button disabled={activeStep === 0 || isDone} onClick={handleBack}>
           Back
         </Button>
