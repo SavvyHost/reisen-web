@@ -61,7 +61,7 @@ const OriginalExperience: FC<OriginalExperienceProps> = ({ DetailTour }) => {
             <ul className="flex flex-col gap-2">
               {excludes.map((item) => (
                 <li key={item.id} className="flex items-center text-gray-600">
-                  <X className="text-green-600 mr-2" />
+                  <X className="text-red-600 mr-2" />
                   <span>{item.description}</span>
                 </li>
               ))}
