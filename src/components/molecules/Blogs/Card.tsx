@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({
   const imageToUse = imageSrc && imageSrc !== "" ? imageSrc : DefaultImage;
 
   return (
-    <div className="flex-shrink-0 max-w-md mx-2 rounded-3xl overflow-hidden shadow-lg bg-[#FAFAFA] h-80">
+    <div className="flex-shrink-0 mb-6 max-w-md mx-2 rounded-3xl overflow-hidden shadow-lg bg-[#FAFAFA] h-80">
       <Link href={`/blogs/${id}`}>
         <div className="flex flex-col h-full">
           {/* Image Section - 1/2 of the card height */}

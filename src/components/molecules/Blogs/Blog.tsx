@@ -67,7 +67,7 @@ const Blog: React.FC<Props> = ({ blogData }) => {
 
   return (
     <div className="p-0">
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-y-2 justify-center ">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-y-2 justify-center lg:px-16  ">
         {dataToShow.map((blog) => (
           <Card
             key={blog.id}
@@ -80,7 +80,7 @@ const Blog: React.FC<Props> = ({ blogData }) => {
         ))}
       </div>
 
-      <div className="block md:hidden">
+      <div className="block md:hidden ">
         <Slider {...sliderSettings}>
           {dataToShow.map((blog) => (
             <div key={blog.id} className="px-0">
