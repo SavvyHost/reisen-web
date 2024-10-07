@@ -22,24 +22,36 @@ const Card: React.FC<CardProps> = ({
   const imageToUse = imageSrc && imageSrc !== "" ? imageSrc : DefaultImage;
 
   return (
-    <div className="flex-shrink-0 max-w-md mx-2 rounded-sm overflow-hidden shadow-lg bg-[#FAFAFA]">
+    <div className="flex-shrink-0 max-w-md mx-2 rounded-3xl overflow-hidden shadow-lg bg-[#FAFAFA] h-80">
       <Link href={`/blogs/${id}`}>
-        <div className="relative">
-          <Image
-            src={imageToUse}
-            alt={title}
-            width={512}
-            height={320}
-            className="w-full h-80 object-cover"
-          />
-          <div className="absolute bottom-0 left-0 font-segoe right-0 h-28 lg:h-20 bg-white/30 backdrop-blur-md">
-            <div className="absolute bottom-0 left-0 p-4 text-white">
-              <h2 className="text-base md:text-xl font-sego">{title}</h2>
-              {/* <p className="text-sm">{content}</p> */}
-              <p className="text-xs">
-                {new Date(created_at).toLocaleDateString()}
-              </p>
+        <div className="flex flex-col h-full">
+          {/* Image Section - 1/2 of the card height */}
+          <div className="relative h-1/2">
+            <Image
+              src={imageToUse}
+              alt={title}
+              layout="fill"
+              objectFit="cover"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Content Section - 1/2 of the card height */}
+          <div className="flex flex-col justify-between h-1/2 p-4 bg-white">
+            <div>
+              <h2 className="text-base md:text-xl font-segoe ">{title}</h2>
             </div>
+
+            {/* Content limited to 1.5 lines */}
+            <p
+              className="text-gray-700 font-light line-clamp-3 overflow-hidden"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+
+            {/* Created Date */}
+            <p className="text-xs text-gray-500">
+              {new Date(created_at).toLocaleDateString()}
+            </p>
           </div>
         </div>
       </Link>

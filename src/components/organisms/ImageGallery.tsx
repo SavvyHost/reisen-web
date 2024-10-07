@@ -28,6 +28,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
     });
 
     return () => {
+      e;
       Fancybox.destroy();
     };
   }, []);
