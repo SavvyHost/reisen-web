@@ -9,7 +9,7 @@ type SelectNationality_tp = {
   placeholder?: string;
   labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
   labelStyle?: string;
-  requigreen?: boolean;
+  required?: boolean;
 };
 
 export default function SelectNationality({
@@ -17,7 +17,7 @@ export default function SelectNationality({
   label,
   labelStyle = "",
   labelProps = {},
-  requigreen,
+  required,
   placeholder,
 }: SelectNationality_tp) {
   const { values, setFieldValue } = useFormikContext<any>();
@@ -41,7 +41,7 @@ export default function SelectNationality({
         <Label
           htmlFor=""
           {...labelProps}
-          requigreen={requigreen}
+          required={required}
           className={`mb-3 text-sm ${labelStyle}`}
         >
           {label}

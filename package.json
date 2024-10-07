@@ -32,6 +32,7 @@
         "date-fns": "^3.6.0",
         "dayjs": "^1.11.13",
         "flowbite-react": "^0.10.1",
+        "follow-redirects": "^1.15.9",
         "formik": "^2.4.6",
         "framer-motion": "^11.11.1",
         "js-cookie": "^3.0.5",

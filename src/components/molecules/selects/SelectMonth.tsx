@@ -8,7 +8,7 @@ type SelectMonth_tp = {
   placeholder?: string;
   labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
   labelStyle?: string;
-  requigreen?: boolean;
+  required?: boolean;
 };
 
 export default function SelectMonth({
@@ -16,7 +16,7 @@ export default function SelectMonth({
   label,
   labelStyle = "",
   labelProps = {},
-  requigreen,
+  required,
   placeholder,
 }: SelectMonth_tp) {
   const { values, setFieldValue } = useFormikContext<any>();
@@ -46,7 +46,7 @@ export default function SelectMonth({
         <Label
           htmlFor=""
           {...labelProps}
-          requigreen={requigreen}
+          required={required}
           className={` text-sm ${labelStyle}`}
         >
           {label}

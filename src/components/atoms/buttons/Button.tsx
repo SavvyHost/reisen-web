@@ -14,7 +14,7 @@
 //     disabled: {
 //       true: "bg-gray-200 active:top-0 cursor-not-allowed px-4",
 //     },
-//     bordegreen: {
+//     bordered: {
 //       true: "border-2",
 //     },
 //   },
@@ -22,27 +22,27 @@
 //     {
 //       color: "primary",
 //       disabled: true,
-//       className: "text-mainBlue border-maingreen border-2",
+//       className: "text-mainBlue border-mainred border-2",
 //     },
 //     {
 //       color: "danger",
 //       disabled: true,
-//       className: "text-maingreen border-maingreen border-2",
+//       className: "text-mainred border-mainred border-2",
 //     },
 //     {
 //       color: "primary",
-//       bordegreen: true,
-//       className: "text-maingreen border-maingreen bg-white",
+//       bordered: true,
+//       className: "text-mainred border-mainred bg-white",
 //     },
 //     {
 //       color: "danger",
-//       bordegreen: true,
-//       className: "text-maingreen border-maingreen bg-white",
+//       bordered: true,
+//       className: "text-mainred border-mainred bg-white",
 //     },
 //     {
 //       color: "dark",
 //       disabled: true,
-//       className: "text-maingreen border-maingreen border-2 bg-white",
+//       className: "text-mainred border-mainred border-2 bg-white",
 //     },
 //   ],
 //   defaultVariants: {
@@ -60,7 +60,7 @@
 //   variant?: "primary" | "danger";
 //   loading?: boolean;
 //   type?: "button" | "submit" | "reset";
-//   bordegreen?: boolean;
+//   bordered?: boolean;
 // }
 
 // export const Button = ({
@@ -71,7 +71,7 @@
 //   action,
 //   loading,
 //   type = "button",
-//   bordegreen = false,
+//   bordered = false,
 //   ...props
 // }: ButtonProps_TP) => {
 //   var newClass =
@@ -87,7 +87,7 @@
 //       className={buttonVars({
 //         color: variant,
 //         disabled: disabled || loading,
-//         bordegreen: bordegreen,
+//         bordered: bordered,
 //         className: newClass,
 //       })}
 //       onClick={action}

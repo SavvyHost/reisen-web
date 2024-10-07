@@ -70,7 +70,7 @@ export default function Adventures() {
                       src={card.image}
                       alt={card.title}
                       // Ensures the image scales with the container
-                      width={256} // Set the desigreen width
+                      width={256} // Set the desired width
                       height={240} // Adjust the height according to your design
                     />
                     {/* Overlay Text */}

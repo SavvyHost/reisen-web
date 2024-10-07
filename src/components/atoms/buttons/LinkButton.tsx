@@ -7,7 +7,7 @@
 //   variants: {
 //     color: {
 //       primary: "text-blue-600",
-//       danger: "text-maingreen",
+//       danger: "text-mainred",
 //     },
 //     disabled: {
 //       true: "text-gray-200 active:top-0 cursor-not-allowed",
