@@ -65,7 +65,7 @@ export const Header = ({ header, className }: any) => {
           <div className="flex-shrink-0">
             <Link href="/">
               <span className="text-xl font-bold text-green-500">
-                Egypt Rasain Tourssssss
+                Egypt Rasain Tours
               </span>
             </Link>
           </div>
