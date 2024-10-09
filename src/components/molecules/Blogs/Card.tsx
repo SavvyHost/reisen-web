@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
               className="w-full h-full object-cover"
               onError={(e) => {
                 // Handle image loading errors
-                console.error("Error loading image:", e);
+                console.error("Error loading img:", e);
               }}
             />
           </div>
