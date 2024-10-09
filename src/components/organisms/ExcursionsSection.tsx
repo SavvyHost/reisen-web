@@ -9,12 +9,11 @@ interface ExcursionsSectionProps {
 const ExcursionsSection: React.FC<ExcursionsSectionProps> = ({ toursData }) => {
   return (
     <div className="bg-[#FAFAFA]">
-      <div className="text-left text-black font-segoe sm:font-semi-bold font-medium text-2xl md:text-special-offer md:p-10 p-5">
-        Top Excursions
+      <div className="text-left lg:px-16 p-2 mb-4 text-black font-segoe sm:font-semi-bold font-medium text-2xl md:text-special-offer">
+        Top excusrions
       </div>
-      <div>
+      <div className="ml-40">
         <Excursions toursData={toursData} />{" "}
-        {/* Pass toursData to Excursions */}
       </div>
     </div>
   );

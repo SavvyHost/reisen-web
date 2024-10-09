@@ -45,19 +45,19 @@ const HeroOverlay: React.FC<Props> = () => {
 
         {/* Buttons Section */}
         <div className="flex flex-col items-center justify-center space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
+          {/* Explore Tours Button */}
           <Link href="/inquire" passHref>
-            <button className="w-48 bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-green-600 flex items-center justify-center space-x-2">
+            <button className="w-48 bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-green-600 flex items-center justify-center space-x-2 group">
               <span>Explore Tours</span>
-              <BsArrowRight className="text-lg" />
+              <BsArrowRight className="text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-opacity duration-300 transition-transform" />
             </button>
           </Link>
 
+          {/* Book Excursions Button */}
           <Link href="/top-packages" passHref>
-            <button className="w-48 border border-white text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-white hover:text-black flex items-center justify-center space-x-2">
-              <span className="text-nowrap">Book Excursions</span>
-              <div>
-                <BsArrowRight className="text-lg" />
-              </div>
+            <button className="w-52 text-center border border-white text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-white hover:text-black flex items-center justify-center space-x-2 group">
+              <span className="text-center">Book Excursions</span>
+              <BsArrowRight className="text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-opacity duration-300 transition-transform" />
             </button>
           </Link>
         </div>

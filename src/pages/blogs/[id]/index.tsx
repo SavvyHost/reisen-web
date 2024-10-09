@@ -43,10 +43,12 @@ const BlogDetails: React.FC<Props> = ({ blogData, DetailBlogs }) => {
           />
         </div>
       </div>
-      <h3 className="font-segoe lg:px-16  text-3xl ml-5 md:mb-6 mb-6 lg:mt-0 mt-5">
-        Related Articles
-      </h3>
-      <Blog blogData={blogData} />
+      <div className="lg:px-16 p-2">
+        <h3 className="font-segoe text-3xl md:mb-6 mb-6 lg:mt-0 my-5">
+          Related Articles
+        </h3>
+        <Blog blogData={blogData} />
+      </div>
     </div>
   );
 };

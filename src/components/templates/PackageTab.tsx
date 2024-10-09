@@ -37,7 +37,7 @@ const PackageDetails = (props: Props) => {
             Solar Boat Museum, the Pyramid of Djoser, and the Pyramid of Unas in
             Saqqara, this is an iconic sight not to be missed.
           </p>
-          <button className="bg-yellow-500 text-white font-segoe px-4 py-2 rounded shadow hover:bg-yellow-600">
+          <button className="bg-green-500 text-white font-segoe px-4 py-2 rounded shadow hover:bg-green-600">
             View All Tours
           </button>
         </div>

@@ -16,7 +16,7 @@ type Props = {
 const BlogSection: React.FC<Props> = ({ blogData }) => {
   return (
     <div className="">
-      <Blog blogData={blogData.data} />
+      <Blog blogData={blogData.data} />{" "}
     </div>
   );
 };

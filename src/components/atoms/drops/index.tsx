@@ -57,7 +57,7 @@ const Drops: React.FC = () => {
   };
 
   return (
-    <div className="flex sm:flex-row flex-wrap items-center justify-center gap-3 p-3 px-5">
+    <div className="flex sm:flex-row flex-wrap items-center justify-center lg:py-0 py-2 gap-3 lg:p-3 lg:px-5">
       {isMobile ? (
         <MobileFilter
           options={filterOptions}

@@ -2,12 +2,13 @@ import React from "react";
 import Slider from "react-slick";
 import AttractionCard from "@/components/templates/AttractionCard";
 import { ToursData } from "@/types/tour";
+import RelatedAttraction from "./RelatedAttraction";
 
 interface ToursProps {
   toursData: ToursData;
 }
 
-const Tours: React.FC<ToursProps> = ({ toursData }) => {
+const MainRelated: React.FC<ToursProps> = ({ toursData }) => {
   const settings = {
     dots: false,
     infinite: false,
@@ -48,7 +49,7 @@ const Tours: React.FC<ToursProps> = ({ toursData }) => {
           (attraction) =>
             attraction.is_best_deal === 1 && (
               <div key={attraction.id} className="tour-card-wrapper">
-                <AttractionCard
+                <RelatedAttraction
                   id={attraction.id}
                   title={attraction.title}
                   location={attraction.location}
@@ -66,4 +67,4 @@ const Tours: React.FC<ToursProps> = ({ toursData }) => {
   );
 };
 
-export default Tours;
+export default MainRelated;

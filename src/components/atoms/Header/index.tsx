@@ -88,11 +88,8 @@ export const Header = ({ header, className }: any) => {
             <button className="text-gray-600 hover:text-gray-900">
               <Heart className="w-5 h-5" />
             </button>
-            <button className="text-gray-600 hover:text-gray-900">
-              <User className="w-5 h-5" />
-            </button>
             <button className=" lg:block hidden text-black border border-gray-400 px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-200">
-              Book Tour Now
+              Tailored Made
             </button>
             <button
               className="lg:hidden text-gray-600 hover:text-gray-900"

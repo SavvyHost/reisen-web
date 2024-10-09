@@ -12,7 +12,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ toursData }) => {
   return (
-    <div className="lg:px-16 p-4">
+    <div className="lg:px-16 p-2">
       <div className="mt-28">
         <SearchExcursions />
       </div>

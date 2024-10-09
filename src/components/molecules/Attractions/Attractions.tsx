@@ -1,49 +1,50 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Slider from "react-slick";
+import ImageCard from "../../../../public/assets/Secondimage.jpeg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Attraction } from "@/types/attraction";
-import defaultImage from "../../../../public/assets/bgblogs.png";
-type AttractionCardProps = {
+import { sampleAttractions } from "@/data";
+import Link from "next/link";
+
+type Attraction = {
+  id: number;
   name: string;
-  imageSrc: string; // Updated to string for dynamic image URLs
+  imageSrc: StaticImageData;
   toursCount: number;
 };
 
-const AttractionCard: React.FC<AttractionCardProps> = ({
+const AttractionCard: React.FC<Attraction> = ({
   name,
   imageSrc,
   toursCount,
 }) => {
   return (
-    <div className="flex flex-col md:w-80 w-64 rounded-none overflow-hidden shadow-md transition-transform duration-300 ease-in-out hover:shadow-lg cursor-pointer border border-gray-200 hover:bg-white">
-      <div className="w-full h-40 relative overflow-hidden">
-        <Image
-          src={imageSrc || defaultImage}
-          alt={name}
-          layout="fill"
-          objectFit="cover"
-          className="transform transition-transform duration-300 ease-in-out hover:scale-110"
-        />
+    <Link href="attraction">
+      <div className="flex shadow-sm hover:shadow-xl mb-3 items-center cursor-pointer rounded-lg overflow-hidden md:w-80 w-64 md:mx-0  h-24 transition-transform duration-300 ease-in-out hover:border border-gray-200 hover:bg-white">
+        <div className="w-24 h-24 relative flex-shrink-0 overflow-hidden">
+          <Image
+            src={imageSrc}
+            alt={name}
+            layout="fill"
+            objectFit="cover"
+            className="transform transition-transform duration-300 ease-in-out hover:scale-110"
+          />
+        </div>
+        <div className="flex-grow p-4 flex flex-col justify-center">
+          <h2 className="text-sm font-semibold text-gray-800 truncate font-segoe">
+            {name}
+          </h2>
+          <p className="text-xs text-gray-600 truncate font-segoe">
+            {toursCount} Tours and Activities
+          </p>
+        </div>
       </div>
-      <div className="flex-grow p-4 flex flex-col justify-between">
-        <h2 className="text-lg font-semibold text-gray-800 truncate font-segoe">
-          {name}
-        </h2>
-        <p className="text-sm text-gray-600 truncate font-segoe">
-          {toursCount} Tours and Activities
-        </p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
-type Props = {
-  attractions: Attraction[]; // Accept dynamic data for attractions
-};
-
-const Attractions: React.FC<Props> = ({ attractions }) => {
+const Attractions: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -82,27 +83,21 @@ const Attractions: React.FC<Props> = ({ attractions }) => {
 
   return (
     <div className="slider-container w-full overflow-hidden p-0">
+      {" "}
+      {/* Adjust container width and overflow */}
       {isMobile ? (
         <Slider {...sliderSettings}>
-          {attractions.map((attraction) => (
-            <div className="flex justify-center" key={attraction.id}>
-              <AttractionCard
-                name={attraction.name}
-                imageSrc={attraction.paner_image?.url || defaultImage} // Use the dynamic image
-                toursCount={attraction.toursCount || 0} // Assuming the API has toursCount or related field
-              />
+          {sampleAttractions.map((attraction) => (
+            <div className="flex justify-start" key={attraction.id}>
+              <AttractionCard {...attraction} />
             </div>
           ))}
         </Slider>
       ) : (
-        <div className="grid grid-cols-4 gap-4 mb-3">
-          {attractions.map((attraction) => (
+        <div className="grid grid-cols-3 gap-4">
+          {sampleAttractions.map((attraction) => (
             <div className="flex justify-start" key={attraction.id}>
-              <AttractionCard
-                name={attraction.name}
-                imageSrc={attraction.paner_image?.url || defaultImage}
-                toursCount={attraction.toursCount || 0}
-              />
+              <AttractionCard {...attraction} />
             </div>
           ))}
         </div>

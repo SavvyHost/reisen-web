@@ -7,6 +7,7 @@ import Loader from "../Loader";
 
 // Import a default image
 import defaultImage from "../../../../public/assets/egys.jpeg"; // Update the path accordingly
+import Link from "next/link";
 
 // Define the type for the DestinationCard props
 interface DestinationCardProps {
@@ -19,22 +20,26 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
   name,
   imageUrl,
 }) => (
-  <div className="relative shadow-2xl cursor-pointer rounded-none overflow-hidden group md:w-[23.6%] w-[310px] h-96 md:mx-2 my-2">
-    <Image
-      src={imageUrl || defaultImage}
-      alt={name}
-      width={256}
-      height={160}
-      className="w-full h-full object-cover brightness-75 group-hover:brightness-100 transition-transform duration-300 group-hover:scale-110"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end pb-4">
-      {/* Adjusted for positioning */}
-      <h3 className="text-white text-xl font-semibold text-shadow-custom absolute top-4 left-4">
-        {name}
-        <div className="w-full border-b border-white my-1" />
-      </h3>{" "}
-      {/* Line under name */}
-    </div>
+  <div className="relative shadow-sm hover:shadow-xl cursor-pointer rounded-none overflow-hidden group md:w-[23.6%] w-[310px] h-96 md:mx-2 my-2">
+    <Link href="/attraction">
+      <Image
+        src={imageUrl || defaultImage}
+        alt={name}
+        width={256}
+        height={160}
+        className="w-full h-full object-cover brightness-75 group-hover:brightness-100 transition-transform duration-300 group-hover:scale-110"
+      />
+    </Link>
+    <Link href="attraction">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end pb-4">
+        {/* Adjusted for positioning */}
+        <h3 className="text-white text-xl font-semibold text-shadow-custom absolute top-4 left-4">
+          {name}
+          <div className="w-full border-b border-white my-1" />
+        </h3>{" "}
+        {/* Line under name */}
+      </div>
+    </Link>
   </div>
 );
 

@@ -51,7 +51,7 @@ const RecentBlog = () => {
     <div className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 mt-3">
         {currentTours.map((pkg) => (
-          <Link href={`/top-packages/${pkg.id}`} key={pkg.id}>
+          <Link href={`/blogs/${pkg.id}`} key={pkg.id}>
             <div className="w-full hover:border-green-500 bg-white rounded-xl border-gray-300 border overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer">
               {/* Card layout for mobile */}
               <div className="flex flex-row md:hidden">
@@ -104,7 +104,7 @@ const RecentBlog = () => {
                       </Button>
                       <Button className="bg-green-300 text-green-900 text-xs py-1 px-3 rounded-sm hover:bg-green-400 flex items-center">
                         <FaWhatsapp className="mr-1" size={12} />
-                        Chat
+                        Share
                       </Button>
                     </div>
                   </div>
@@ -184,7 +184,7 @@ const RecentBlog = () => {
                       </Button>
                       <Button className="bg-green-300 text-green-900 text-xs py-2 px-4 rounded-md hover:bg-green-400 flex items-center">
                         <FaWhatsapp className="mr-2" size={16} />
-                        Chat
+                        Share
                       </Button>
                     </div>
                   </div>

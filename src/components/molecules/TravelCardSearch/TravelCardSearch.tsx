@@ -49,7 +49,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
               {/* Card layout for mobile */}
               <div className="flex flex-row md:hidden">
                 {/* Image Section */}
-                <div className="w-1/3 h-32 sm:h-40 relative">
+                <div className="w-1/3 h-40 sm:h-40 relative">
                   <Image
                     src={pkg?.main_image?.url || "/path/to/default/image.jpg"}
                     alt={pkg.title}
@@ -68,7 +68,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                 {/* Content Section */}
                 <div className="w-2/3 p-3 flex flex-col justify-between">
                   <div>
-                    <h2 className="text-lg font-semibold mb-1 text-gray-800 truncate">
+                    <h2 className="text-lg font-semibold mb-1 text-gray-800 line-clamp-2">
                       {pkg.title}
                     </h2>
                     <div className="grid grid-cols-2 gap-1 text-xs mb-2">
@@ -83,6 +83,24 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
                         <span className="text-gray-600">
                           {pkg.duration} Days
                         </span>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-1 text-xs mb-2">
+                      <div className="flex items-center space-x-2">
+                        <Users className="w-4 h-4 text-gray-500" />
+                        <div>
+                          <p className="text-sm text-gray-600">Age range: </p>
+                          <p className="font-segoe text-gray-800">
+                            {pkg.age_range}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Globe className="w-4 h-4 text-gray-500" />
+                        <div>
+                          <p className="text-sm text-gray-600">Run: </p>
+                          <p className="font-segoe text-gray-800">{pkg.run}</p>
+                        </div>
                       </div>
                     </div>
                   </div>

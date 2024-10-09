@@ -87,8 +87,8 @@ const Mobile: React.FC<MobileProps> = ({ toursData }) => {
           </div>
         </div>
       </div>
-      <div className="flex-1  mt-[calc(45px+4rem)]">
-        <div className="py-6 px-3">
+      <div className="flex-1  mt-[calc(70px+4rem)] mb-4">
+        <div className="px-2">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="w-full md:w-3/4">
               <TravelPackagePage toursData={toursData} />
