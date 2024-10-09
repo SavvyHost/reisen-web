@@ -20,7 +20,7 @@ const AttractionCard: React.FC<Attraction> = ({
   toursCount,
 }) => {
   return (
-    <Link href="attraction">
+    <Link href="distanation">
       <div className="flex shadow-sm hover:shadow-xl mb-3 items-center cursor-pointer rounded-lg overflow-hidden md:w-80 w-64 md:mx-0  h-24 transition-transform duration-300 ease-in-out hover:border border-gray-200 hover:bg-white">
         <div className="w-24 h-24 relative flex-shrink-0 overflow-hidden">
           <Image
