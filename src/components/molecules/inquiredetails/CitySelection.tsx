@@ -66,19 +66,19 @@ const CitySelection: React.FC<CitySelectionProps> = ({
   };
 
   return (
-    <div className="pt-4">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
+    <div className="pt-4 lg:px-32">
+      <h2 className="text-3xl font-bold text-green-800 mb-4 text-center">
         Choose Your Dream Destinations
       </h2>
-      <p className="text-center text-gray-600 mb-8">
+      <p className="text-center text-green-600 mb-8">
         Select one or more cities for your journey
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {cities.map((city, index) => (
           <motion.div
             key={index}
-            className={`relative overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300 ${
-              isCitySelected(city.name) ? "ring-4 ring-blue-500" : ""
+            className={`relative overflow-hidden rounded-sm shadow-lg cursor-pointer transition-all duration-300 ${
+              isCitySelected(city.name) ? "ring-4 ring-green-500" : ""
             }`}
             whileHover={{ scale: 1.05 }}
             onClick={() => handleCitySelect(city.name)}
@@ -115,9 +115,9 @@ const CitySelection: React.FC<CitySelectionProps> = ({
               transition={{ duration: 0.2 }}
             >
               {isCitySelected(city.name) ? (
-                <Check className="w-6 h-6 text-blue-500" />
+                <Check className="w-6 h-6 text-green-500" />
               ) : (
-                <Plus className="w-6 h-6 text-gray-600" />
+                <Plus className="w-6 h-6 text-green-600" />
               )}
             </motion.div>
           </motion.div>
@@ -126,15 +126,17 @@ const CitySelection: React.FC<CitySelectionProps> = ({
       <div className="mt-8">
         <h3 className="text-xl font-semibold mb-2">Selected Destinations:</h3>
         {formData.selectedCities && formData.selectedCities.length > 0 ? (
-          <ul className="list-disc list-inside">
+          <ul className="list-decimal list-inside flex gap-x-2">
             {formData.selectedCities.map((city: string) => (
-              <li key={city} className="text-lg text-gray-700">
+              <li key={city} className="text-lg text-green-700">
                 {city}
               </li>
             ))}
           </ul>
         ) : (
-          <p className="text-gray-500">No destinations selected yet.</p>
+          <p className="text-green-500 text-lg">
+            No destinations selected yet.
+          </p>
         )}
       </div>
     </div>

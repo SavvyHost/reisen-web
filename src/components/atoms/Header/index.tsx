@@ -88,9 +88,12 @@ export const Header = ({ header, className }: any) => {
             <button className="text-gray-600 hover:text-gray-900">
               <Heart className="w-5 h-5" />
             </button>
-            <button className=" lg:block hidden text-black border border-gray-400 px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-200">
+            <Link
+              href="/inquire"
+              className=" lg:block hidden text-black border border-gray-400 px-4 py-2 rounded-md text-sm font-semibold hover:bg-gray-200"
+            >
               Tailored Made
-            </button>
+            </Link>
             <button
               className="lg:hidden text-gray-600 hover:text-gray-900"
               onClick={() => setIsMenuOpen(true)}

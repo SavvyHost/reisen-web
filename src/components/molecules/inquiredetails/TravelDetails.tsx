@@ -68,7 +68,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
               type="text"
               name="name"
               placeholder="Full Name *"
-              className="w-full bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
+              className="w-full bg-white border border-green-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
               value={formik.values.name}
               onChange={formik.handleChange}
             />
@@ -83,7 +83,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
               type="email"
               name="email"
               placeholder="Email Address *"
-              className="w-full bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
+              className="w-full bg-white border border-green-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
               value={formik.values.email}
               onChange={formik.handleChange}
             />
@@ -99,7 +99,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
           <div>
             <select
               name="nationality"
-              className="w-full bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
+              className="w-full bg-white border border-green-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
               value={formik.values.nationality}
               onChange={formik.handleChange}
             >
@@ -121,7 +121,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
               onChange={(value) => formik.setFieldValue("phone", value)}
               placeholder="Phone Number *"
               defaultCountry="EG"
-              className="w-full bg-white border border-gray-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
+              className="w-full bg-white border border-green-200 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
             />
             {formik.errors.phone && formik.touched.phone && (
               <div className="text-red-500 text-xs mt-1">
@@ -133,10 +133,10 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {["adults", "children", "infants"].map((type) => (
-            <div key={type} className="bg-gray-50 rounded-lg p-4">
+            <div key={type} className="bg-green-50 rounded-lg p-4">
               <label className="text-sm font-medium mb-2 block">
                 {type.charAt(0).toUpperCase() + type.slice(1)}
-                <span className="text-xs text-gray-500 ml-1">
+                <span className="text-xs text-green-500 ml-1">
                   {type === "adults"
                     ? "(12+)"
                     : type === "children"
@@ -177,7 +177,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
         <div>
           <select
             name="budget"
-            className="w-full bg-gray-50 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
+            className="w-full bg-green-50 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
             value={formik.values.budget}
             onChange={formik.handleChange}
           >
@@ -192,19 +192,19 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
               {formik.errors.budget}
             </div>
           )}
-          <small className="block text-sm mt-2 text-gray-500">
+          <small className="block text-sm mt-2 text-green-500">
             Per person (international flights NOT included)
           </small>
         </div>
 
-        <div className="flex items-center bg-gray-50 rounded-lg p-4">
+        <div className="flex items-center bg-green-50 rounded-lg p-4">
           <input
             type="checkbox"
             id="flightOffer"
             name="flightOffer"
             checked={formik.values.flightOffer}
             onChange={formik.handleChange}
-            className="mr-3 h-5 w-5 text-green-600 focus:ring-transparent border-gray-300 rounded"
+            className="mr-3 h-5 w-5 text-green-600 focus:ring-transparent border-green-300 rounded"
           />
           <label htmlFor="flightOffer" className="text-sm">
             Add flight offer to your vacation package
@@ -215,7 +215,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
           name="additionalInfo"
           placeholder="Additional Info (Optional)"
           rows={4}
-          className="w-full bg-gray-50 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
+          className="w-full bg-green-50 rounded-lg py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-transparent transition-all"
           value={formik.values.additionalInfo}
           onChange={formik.handleChange}
         />

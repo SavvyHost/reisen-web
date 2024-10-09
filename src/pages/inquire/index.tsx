@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import { Stepper, Step, StepLabel, Button } from "@mui/material";
+import { useRouter } from "next/router";
 import CitySelection from "@/components/molecules/inquiredetails/CitySelection";
 import TimeDetails from "@/components/molecules/inquiredetails/TimeDetails";
 import TravelDetails from "@/components/molecules/inquiredetails/TravelDetails";
 
+import ThanksInquire from "@/components/molecules/ThanksInquire";
+
 const TravelStepper: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [isDone, setIsDone] = useState(false);
+  const router = useRouter(); // Initialize useRouter for navigation
   const [formData, setFormData] = useState({
-    name: "", // Required
-    email: "", // Required
-    nationality: "", // Required
-    phone: "", // Required
-    adults: 2, // Optional
-    children: 0, // Optional
-    infants: 0, // Optional
-    budget: "", // Required
-    flightOffer: false, // Optional
-    additionalInfo: "", // Optional
-    city: "", // If you need this for the form
-    cityDetails: {}, // If you need this for the form
-    travelDetails: {}, // If you need this for the form
+    name: "",
+    email: "",
+    nationality: "",
+    phone: "",
+    adults: 2,
+    children: 0,
+    infants: 0,
+    budget: "",
+    flightOffer: false,
+    additionalInfo: "",
+    city: "",
+    cityDetails: {},
+    travelDetails: {},
   });
 
   const steps = ["Choose City", "City Details", "Travel Details"];
@@ -54,12 +58,34 @@ const TravelStepper: React.FC = () => {
           <TravelDetails formData={formData} onChange={handleFormChange} />
         );
       default:
-        return "Done";
+        return <SuccessComponent />;
     }
   };
 
+  const handleCloseThanks = () => {
+    setIsDone(false);
+    router.push("/"); // Navigate to home page after closing the "Thanks" message
+  };
+
+  const handleFinish = () => {
+    setIsDone(true);
+    setTimeout(() => {
+      router.push("/"); // Redirect to home after showing success message
+    }, 2000);
+  };
+
+  // Component to show after finishing the stepper
+  const SuccessComponent = () => (
+    <div className="">
+      <ThanksInquire
+        onClose={handleCloseThanks}
+        message="Thank you for your submission!"
+      />
+    </div>
+  );
+
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto lg:p-4 mt-24">
       <Stepper activeStep={activeStep}>
         {steps.map((label) => (
           <Step key={label}>
@@ -68,28 +94,32 @@ const TravelStepper: React.FC = () => {
         ))}
       </Stepper>
 
-      <div className="mt-8">
+      <div className="mt-8 p-4">
         {isDone ? (
-          <div className="text-center text-2xl font-bold">Done!</div>
+          <SuccessComponent />
         ) : (
+          // Show success message when done
           getStepContent(activeStep)
         )}
       </div>
 
-      {/* Sticky footer buttons inside the container */}
-      <div className="sticky bottom-0 left-0 w-full bg-gray-100 shadow-lg flex justify-between p-4">
-        <Button disabled={activeStep === 0 || isDone} onClick={handleBack}>
-          Back
-        </Button>
-        <Button
-          className="bg-green-600 hover:bg-green-400"
-          variant="contained"
-          onClick={handleNext}
-          disabled={isDone}
-        >
-          {activeStep === steps.length - 1 ? "Finish" : "Next"}
-        </Button>
-      </div>
+      {/* Sticky footer buttons */}
+      {!isDone && (
+        <div className="sticky bottom-0 left-0 w-full bg-green-100 shadow-lg flex justify-between p-4">
+          <Button disabled={activeStep === 0} onClick={handleBack}>
+            Back
+          </Button>
+          <Button
+            className="bg-green-600 hover:bg-green-400"
+            variant="contained"
+            onClick={
+              activeStep === steps.length - 1 ? handleFinish : handleNext
+            }
+          >
+            {activeStep === steps.length - 1 ? "Finish" : "Next"}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
