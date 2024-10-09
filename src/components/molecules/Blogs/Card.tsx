@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import DefaultImage from "../../../../public/assets/pyr.jpeg";
-import DOMPurify from "dompurify"; // Import DOMPurify
+
 
 interface CardProps {
   imageSrc: string | StaticImageData;
@@ -19,15 +19,6 @@ const Card: React.FC<CardProps> = ({
   created_at,
   id,
 }) => {
-  // State to hold sanitized content
-  const [sanitizedContent, setSanitizedContent] = useState("");
-
-  useEffect(() => {
-    // Sanitize content on client-side only
-    const cleanContent = DOMPurify.sanitize(content);
-    setSanitizedContent(cleanContent);
-  }, [content]);
-
   // Fallback to default image if imageSrc is undefined, null, or an empty string
   const imageToUse = imageSrc && imageSrc !== "" ? imageSrc : DefaultImage;
 
@@ -55,7 +46,7 @@ const Card: React.FC<CardProps> = ({
             <h2 className="text-base md:text-xl font-segoe">{title}</h2>
             <p
               className="text-gray-700 font-light line-clamp-3 overflow-hidden"
-              dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+              dangerouslySetInnerHTML={{ __html: content }}
             />
           </div>
         </div>
