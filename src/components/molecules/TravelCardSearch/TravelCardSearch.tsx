@@ -49,7 +49,7 @@ const TravelPackagePage: React.FC<TravelPackagePageProps> = ({ toursData }) => {
               {/* Card layout for mobile */}
               <div className="flex flex-row md:hidden">
                 {/* Image Section */}
-                <div className="w-1/3 h-40 sm:h-40 relative">
+                <div className="w-1/3 h-52 sm:h-40 relative">
                   <Image
                     src={pkg?.main_image?.url || "/path/to/default/image.jpg"}
                     alt={pkg.title}
