@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
   });
 
   const contactInfo = data?.data[3]?.value || {
-    companyName: "Egypt Travel Light",
+    companyName: "Egypt Raisen Tours",
     email: "",
     phone: "",
     address: "",
