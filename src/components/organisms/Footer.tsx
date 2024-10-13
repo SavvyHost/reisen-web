@@ -60,7 +60,7 @@ const Footer = (props: Props) => {
   };
 
   return (
-    <footer className="bg-gray-800 px-8 font-sans tracking-wide mt-16">
+    <footer className="bg-gray-800 px-8 font-sans tracking-wide mt-20">
       <div className="relative">
         <div className="bg-blue-600 rounded-md flex flex-col sm:flex-row items-center justify-between sm:px-12 px-4 py-4 absolute top-[-66px] w-full">
           <div className="text-white text-lg font-semibold mb-2 sm:mb-0">

@@ -16,6 +16,9 @@ type Props = {
 const BlogSection: React.FC<Props> = ({ blogData }) => {
   return (
     <div className="">
+      <div className="text-left text-black font-segoe sm:font-semi-bold font-medium text-2xl md:text-special-offer mb-4">
+        Our Blogs
+      </div>
       <Blog blogData={blogData.data} />{" "}
     </div>
   );

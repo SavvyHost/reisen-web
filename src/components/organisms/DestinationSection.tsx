@@ -1,7 +1,7 @@
 import React from "react";
 import DestinationRow from "../molecules/Destination/Destination";
 
-// Define the Destination type with all requigreen properties
+// Define the Destination type with all required properties
 type Destination = {
   id: number;
   name: string;
@@ -19,11 +19,12 @@ const DestinationSection: React.FC<Props> = ({ Destinations }) => {
   const mappedDestinations = Destinations.map((dest) => ({
     name: dest.name,
     panar_image: dest.panar_image, // Ensure the correct property name
+    id: dest.id, // Ensure the correct property name
   }));
 
   return (
     <div className="">
-      <div className="text-left mb-4 text-black font-segoe sm:font-semi-bold font-medium text-2xl md:text-special-offer">
+      <div className="text-left lg:my-8 my-4 text-black font-segoe sm:font-semi-bold font-medium text-2xl md:text-special-offer">
         Destination
       </div>
       <div>

@@ -11,16 +11,14 @@ const DesktopMenu = ({ navLinks }) => {
         {navLinks.map(({ href, label }) => (
           <li
             key={href}
-            className={`relative transition-transform duration-500 ${
-              router.pathname === href ? "transform -translate-y-1" : ""
-            }`}
+            className={`relative transition-transform duration-500`}
           >
             <Link
               href={href}
-              className={`font-semibold text-sm ${
+              className={`font-semibold text-sm relative ${
                 router.pathname === href
-                  ? "text-green-500 before:content-['•'] after:content-['•'] before:absolute after:absolute before:-left-4 after:-right-4 before:text-green-500 after:text-green-500"
-                  : "text-green-700 hover:text-green-400"
+                  ? "text-green-500 after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 after:scale-x-100"
+                  : "text-green-700 hover:text-green-400 after:absolute after:left-0 after:right-0 after:bottom-[-4px] after:h-[2px] after:bg-green-500 after:transition-all after:duration-300 after:scale-x-0 hover:after:scale-x-100"
               }`}
             >
               {label}

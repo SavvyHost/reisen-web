@@ -18,13 +18,13 @@ const HeroOverlay: React.FC<Props> = () => {
     };
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust based on your mobile breakpoint
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
 
-    handleResize(); // Initial check
+    handleResize();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -47,17 +47,21 @@ const HeroOverlay: React.FC<Props> = () => {
         <div className="flex flex-col items-center justify-center space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
           {/* Explore Tours Button */}
           <Link href="/top-packages" passHref>
-            <button className="w-48 bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-green-600 flex items-center justify-center space-x-2 group">
-              <span>Explore Tours</span>
-              <BsArrowRight className="text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-opacity duration-300 transition-transform" />
+            <button className="w-36 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-green-600 hover:w-44 flex items-center justify-center group">
+              <span className="mr-2 transition-all text-nowrap duration-300 group-hover:mr-4">
+                Explore Tours
+              </span>
+              <BsArrowRight className="transition-all duration-300 opacity-0 group-hover:opacity-100" />
             </button>
           </Link>
 
           {/* Book Excursions Button */}
           <Link href="/top-excursions" passHref>
-            <button className="w-52 text-center border border-white text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all hover:bg-white hover:text-black flex items-center justify-center space-x-2 group">
-              <span className="text-center">Book Excursions</span>
-              <BsArrowRight className="text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-opacity duration-300 transition-transform" />
+            <button className="w-44 border border-white text-white font-bold py-3 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:w-48 flex items-center justify-center group">
+              <span className="mr-2 transition-all text-nowrap duration-300 group-hover:mr-4">
+                Book Excursions
+              </span>
+              <BsArrowRight className="transition-all duration-300 opacity-0 group-hover:opacity-100" />
             </button>
           </Link>
         </div>
