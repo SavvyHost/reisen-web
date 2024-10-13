@@ -3,7 +3,6 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import DefaultImage from "../../../../public/assets/pyr.jpeg";
 
-
 interface CardProps {
   imageSrc: string | StaticImageData;
   title: string;

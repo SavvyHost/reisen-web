@@ -13,7 +13,7 @@ import CallToActionSection from "@/components/organisms/CTAsection";
 import fetchData from "@/helper/FetchData";
 import { TourPackage, ToursData } from "@/types/tour";
 import { Destination } from "./blogs";
-import { Attraction } from "@/types/attraction"; // Create a type for attraction
+import { Attraction } from "@/types/tour"; // Create a type for attraction
 
 type Blog = {
   id: number;
