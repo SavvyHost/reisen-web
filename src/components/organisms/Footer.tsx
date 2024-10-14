@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
   });
 
   const contactInfo = data?.data[3]?.value || {
-    companyName: "Egypt Raisen Tours",
+    companyName: "Egypt Rasain Tours ",
     email: "",
     phone: "",
     address: "",
