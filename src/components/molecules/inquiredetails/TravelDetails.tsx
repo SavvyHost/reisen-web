@@ -20,7 +20,8 @@ interface TravelDetailsProps {
     flightOffer: boolean;
     additionalInfo: string;
   };
-  onChange: (data: Partial<TravelDetailsProps["formData"]>) => void; // Define onChange prop type
+  onChange: (data: Partial<TravelDetailsProps["formData"]>) => void;
+  onSubmit: () => void;
 }
 
 const validationSchema = Yup.object({
@@ -36,6 +37,7 @@ const validationSchema = Yup.object({
 const TravelDetails: React.FC<TravelDetailsProps> = ({
   formData,
   onChange,
+  onSubmit,
 }) => {
   const [isDone, setIsDone] = useState(false); // State to track form submission
   const router = useRouter();
@@ -69,7 +71,7 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
     onSubmit: (values) => {
       console.log("Form values", values);
       onChange(values); // Call onChange to update the parent state
-      setIsDone(true); // Set form submission state to true
+      onSubmit();
     },
   });
 
@@ -242,14 +244,6 @@ const TravelDetails: React.FC<TravelDetailsProps> = ({
           value={formik.values.additionalInfo}
           onChange={formik.handleChange}
         />
-
-        <Button
-          type="submit"
-          variant="contained"
-          className="w-full bg-green-600 py-3 text-white font-medium text-lg hover:bg-green-700 transition-colors focus:outline-none"
-        >
-          Submit
-        </Button>
       </form>
     </div>
   );

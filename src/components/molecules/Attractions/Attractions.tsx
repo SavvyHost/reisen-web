@@ -19,7 +19,7 @@ const AttractionCard: React.FC<AttractionCardProps> = ({
 }) => {
   return (
     <Link href="/attractions">
-      <div className="flex shadow-sm hover:shadow-xl border border-green-200 mb-3 items-center cursor-pointer rounded-lg overflow-hidden w-full max-w-xs  h-20 sm:h-24 transition-transform duration-300 ease-in-out hover:border hover:border-green-500 hover:bg-white">
+      <div className="flex shadow-sm hover:shadow-xl border border-gray-200 mb-3 items-center cursor-pointer rounded-lg overflow-hidden w-full max-w-xs  h-20 sm:h-24 transition-transform duration-300 ease-in-out hover:border hover:border-green-500 hover:bg-white">
         <div className="w-20 h-20 sm:w-24 sm:h-24 relative flex-shrink-0 overflow-hidden">
           <Image
             src={imageSrc}

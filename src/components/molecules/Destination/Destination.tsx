@@ -67,7 +67,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
   return (
     <div
       ref={cardRef}
-      className="relative shadow-sm hover:shadow-xl cursor-pointer rounded-none overflow-hidden group  h-96 md:mx-2 my-2"
+      className="relative shadow-sm hover:shadow-xl cursor-pointer  overflow-hidden group  h-36 rounded-lg md:mx-2 my-2"
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
