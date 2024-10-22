@@ -159,7 +159,7 @@ const DestinationRow: React.FC<DestinationRowProps> = ({ Destinations }) => {
           <div key={`${dest.name}-${index}`} className="pr-3">
             <DestinationCard
               name={dest.name}
-              imageUrl={dest.panar_image}
+              imageUrl={dest.panar_image.url}
               id={dest.id}
             />
           </div>

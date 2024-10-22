@@ -4,21 +4,23 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Attraction } from "@/types/tour";
-import defaultImage from "../../../../public/assets/pyr.jpeg";
+import defaultImage from "../../../../public/assets/camels.jpeg";
 import Link from "next/link";
 type AttractionCardProps = {
   name: string;
   imageSrc: string; // Updated to string for dynamic image URLs
   toursCount: number;
+  id: number;
 };
 
 const AttractionCard: React.FC<AttractionCardProps> = ({
   name,
   imageSrc,
   toursCount,
+  id,
 }) => {
   return (
-    <Link href="/attractions">
+    <Link href={`/attractions/${id}`} className="">
       <div className="flex shadow-sm hover:shadow-xl border border-gray-200 mb-3 items-center cursor-pointer rounded-lg overflow-hidden w-full max-w-xs  h-20 sm:h-24 transition-transform duration-300 ease-in-out hover:border hover:border-green-500 hover:bg-white">
         <div className="w-20 h-20 sm:w-24 sm:h-24 relative flex-shrink-0 overflow-hidden">
           <Image
@@ -91,7 +93,8 @@ const Attractions: React.FC<Props> = ({ attractions }) => {
             <div className="flex justify-start pr-3 pb-2" key={attraction.id}>
               <AttractionCard
                 name={attraction.name}
-                imageSrc={attraction.paner_image?.url || defaultImage} // Use the dynamic image
+                imageSrc={attraction.paner_image?.url || defaultImage}
+                id={attraction.id} // Use the dynamic image
                 toursCount={attraction.toursCount || 0} // Assuming the API has toursCount or related field
               />
             </div>
@@ -103,6 +106,7 @@ const Attractions: React.FC<Props> = ({ attractions }) => {
             <div className="flex justify-start" key={attraction.id}>
               <AttractionCard
                 name={attraction.name}
+                id={attraction.id}
                 imageSrc={attraction.paner_image?.url || defaultImage}
                 toursCount={attraction.toursCount || 0}
               />

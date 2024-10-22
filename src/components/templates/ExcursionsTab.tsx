@@ -74,7 +74,6 @@ const ExcursionsTab: React.FC<ExcursionsTabProps> = ({ toursData }) => {
 
         //   <MobileSearchModal />
         // </div>
-
         ""
       )}
 

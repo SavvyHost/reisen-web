@@ -37,6 +37,7 @@ interface HomeProps {
 export default function Home({
   toursData,
   excursionData,
+  categories,
   blogData,
   Destinations,
   attractionsData, // New: Destructure attractionsData
@@ -64,7 +65,7 @@ export default function Home({
         <AttractionsSection attractions={limitedAttractions} />
       </div>
       <div className="lg:px-16 p-4 bg-[#FAFAFA] ">
-        <AdventuresSection />
+        <AdventuresSection categories={categories} />{" "}
       </div>
       {/* <div className="lg:px-16 p-4 bg-[#FAFAFA] ">
         <CallToActionSection />
@@ -83,6 +84,7 @@ export async function getServerSideProps() {
   const toursData: ToursData = await fetchData("tours?type=tour_package");
   const excursionData = await fetchData("tours?type=excursion"); // Excursion tours data
   const Destinations = await fetchData("cities");
+  const categoriesData = await fetchData("categories"); // New: Fetch categories data
   const blogData = await fetchData("blogs");
   const attractionsData = await fetchData("places"); // New: Fetch attractions data
 
@@ -92,6 +94,7 @@ export async function getServerSideProps() {
       excursionData: excursionData.data as TourPackage[], // Pass the renamed variable
       blogData,
       Destinations: Destinations.data,
+      categories: categoriesData.data,
       attractionsData: attractionsData.data, // Pass attractions data
     },
   };
